@@ -5,15 +5,22 @@ const overlay = document.querySelector(".overlay");
 const btnClose = document.querySelector(".close-modal");
 const btnOpen = document.querySelectorAll(".show-modal");
 
+function toggleHidden() {
+  modal.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
+}
+
 for (let i = 0; i < btnOpen.length; i++) {
   const btn = btnOpen[i];
   btn.addEventListener("click", () => {
-    modal.classList.remove("hidden");
-    overlay.classList.remove("hidden");
+    toggleHidden();
   });
 }
 
 btnClose.addEventListener("click", () => {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
+  toggleHidden();
+});
+
+overlay.addEventListener("click", () => {
+  toggleHidden();
 });
