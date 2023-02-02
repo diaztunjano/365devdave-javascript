@@ -9,5 +9,6 @@ for (let i = 0; i < btnOpen.length; i++) {
   const btn = btnOpen[i];
   btn.addEventListener("click", () => {
     modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
   });
 }
