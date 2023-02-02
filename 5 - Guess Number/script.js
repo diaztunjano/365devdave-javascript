@@ -2,6 +2,7 @@
 
 let randomNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
+let highScore = Number(document.querySelector(".highscore").textContent);
 
 document.querySelector(".check").addEventListener("click", () => {
   const guess = Number(document.querySelector(".guess").value);
@@ -31,6 +32,9 @@ document.querySelector(".check").addEventListener("click", () => {
       document.querySelector("body").style.backgroundColor = "#60b347";
       document.querySelector(".number").style.width = "30rem";
       document.querySelector(".number").textContent = randomNumber;
+      if (highScore < score) {
+        document.querySelector(".highscore").textContent = score;
+      }
     }
   } else {
     document.querySelector(".message").textContent = "You lost the game 💩 ";
