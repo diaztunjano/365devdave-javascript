@@ -24,3 +24,9 @@ btnClose.addEventListener("click", () => {
 overlay.addEventListener("click", () => {
   toggleHidden();
 });
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    toggleHidden();
+  }
+});
