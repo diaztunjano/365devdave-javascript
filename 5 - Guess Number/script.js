@@ -33,7 +33,8 @@ document.querySelector(".check").addEventListener("click", () => {
       document.querySelector(".number").style.width = "30rem";
       document.querySelector(".number").textContent = randomNumber;
       if (highScore < score) {
-        document.querySelector(".highscore").textContent = score;
+        highScore = score;
+        document.querySelector(".highscore").textContent = highScore;
       }
     }
   } else {
