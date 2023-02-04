@@ -11,6 +11,7 @@ const currentScoreP1El = document.getElementById("current--1");
 
 let currentScore = 0;
 let activePlayer = 0;
+let isGamePlaying = true;
 const scores = [0, 0];
 
 score0El.textContent = 0;
@@ -31,45 +32,46 @@ function switchPlayer() {
 }
 
 btnRoll.addEventListener("click", () => {
-  const randomNumber = Math.trunc(Math.random() * 6) + 1;
+  if (isGamePlaying) {
+    const randomNumber = Math.trunc(Math.random() * 6) + 1;
 
-  //remove dice
-  diceEl.classList.remove("hidden");
-  diceEl.src = `dice-${randomNumber}.png`;
+    //remove dice
+    diceEl.classList.remove("hidden");
+    diceEl.src = `dice-${randomNumber}.png`;
 
-  // add to current score:
-  if (randomNumber !== 1) {
-    currentScore += randomNumber;
-    document.getElementById(`current--${activePlayer}`).textContent =
-      currentScore;
-  } else {
-    // Changing player
-    switchPlayer();
+    // add to current score:
+    if (randomNumber !== 1) {
+      currentScore += randomNumber;
+      document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore;
+    } else {
+      // Changing player
+      switchPlayer();
+    }
   }
 });
 
 btnHold.addEventListener("click", () => {
-  //Add current score to active player score
-  scores[activePlayer] += currentScore;
+  if (isGamePlaying) {
+    //Add current score to active player score
+    scores[activePlayer] += currentScore;
 
-  // Saving in variable
-  document.getElementById(`score--${activePlayer}`).textContent =
-    scores[activePlayer];
+    // Saving in variable
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
 
-  // if score < 100
-  if (scores[activePlayer] < 20) {
-    switchPlayer();
-  } else {
-    console.log("Winner");
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.add("player--winner");
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.remove("player--active");
+    // if score < 100
+    if (scores[activePlayer] < 20) {
+      switchPlayer();
+    } else {
+      isGamePlaying = false;
+      console.log("Winner");
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add("player--winner");
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove("player--active");
+    }
   }
-  // keep playing
-
-  // else
-  // wins
 });
