@@ -64,8 +64,13 @@ btnHold.addEventListener("click", () => {
     if (scores[activePlayer] < 20) {
       switchPlayer();
     } else {
+      diceEl.classList.add("hidden");
+
       isGamePlaying = false;
-      console.log("Winner");
+
+      btnHold.classList.add("hidden");
+      btnRoll.classList.add("hidden");
+
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add("player--winner");
@@ -74,4 +79,16 @@ btnHold.addEventListener("click", () => {
         .classList.remove("player--active");
     }
   }
+});
+
+btnNew.addEventListener("click", () => {
+  currentScore = 0;
+  activePlayer = 0;
+  isGamePlaying = true;
+  scores[0] = 0;
+  scores[1] = 0;
+  btnHold.classList.remove("hidden");
+  btnRoll.classList.remove("hidden");
+  document.getElementById(`score--0`).textContent = scores[activePlayer];
+  document.getElementById(`score--1`).textContent = scores[activePlayer];
 });
