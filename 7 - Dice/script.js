@@ -11,9 +11,11 @@ const diceEl = document.querySelector(".dice");
 const currentScoreP0El = document.getElementById("current--0");
 const currentScoreP1El = document.getElementById("current--1");
 
+// Initial values:
 let currentScore = 0;
 let activePlayer = 0;
 let isGamePlaying = true;
+
 const scores = [0, 0];
 
 score0El.textContent = 0;
