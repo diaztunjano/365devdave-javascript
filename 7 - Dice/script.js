@@ -85,6 +85,7 @@ btnHold.addEventListener("click", () => {
   }
 });
 
+// Restart game
 btnNew.addEventListener("click", () => {
   currentScore = 0;
   activePlayer = 0;
