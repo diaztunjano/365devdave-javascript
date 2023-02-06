@@ -93,7 +93,7 @@ btnNew.addEventListener("click", () => {
   document.getElementById(`score--1`).textContent = scores[activePlayer];
   document.getElementById(`current--0`).textContent = currentScore;
   document.getElementById(`current--1`).textContent = currentScore;
-  document.querySelector(`.player--0`).classList.remove("player--active");
+  document.querySelector(`.player--0`).classList.add("player--active");
   document.querySelector(`.player--1`).classList.remove("player--active");
   document.querySelector(`.player--0`).classList.remove("player--winner");
   document.querySelector(`.player--1`).classList.remove("player--winner");
