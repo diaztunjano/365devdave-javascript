@@ -118,10 +118,12 @@ const jessica = {
   age: 27,
 };
 const marriedJessica = jessica;
+
 // Here, we change the value AT THE REFERENCE, so it changes to 'jessica'
 // as well as 'marriedJessica'. Because both names hold the SAME address
 // in the HEAP
 marriedJessica.age = 28;
+
 console.log({ marriedJessica, jessica });
 
 // This doesnt work, because it changes the reference to a new object
