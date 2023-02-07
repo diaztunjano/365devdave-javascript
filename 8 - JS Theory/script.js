@@ -79,22 +79,64 @@
 
 // ARROW FUNCTIONS:
 
-const dave = {
-  year: 1996,
-  firstName: "El dave",
-  calcAge: function () {
-    console.log(this); // This is "dave" object
-    console.log(2023 - this.year); // It lets me access to "year" from the "dave" object
+// const dave = {
+//   year: 1996,
+//   firstName: "El dave",
+//   calcAge: function () {
+//     console.log(this); // This is "dave" object
+//     console.log(2023 - this.year); // It lets me access to "year" from the "dave" object
 
-    // this -> undefined because its a regular function call.
-    const isMillenial = function () {
-      console.log(1981 <= this.year <= 1996);
-    };
+//     // this -> undefined because its a regular function call.
+//     const isMillenial = function () {
+//       console.log(1981 <= this.year <= 1996);
+//     };
 
-    isMillenial();
-  },
-  greet: () => console.log(`Hey ${this.firstName}`),
+//     isMillenial();
+//   },
+//   greet: () => console.log(`Hey ${this.firstName}`),
+// };
+
+// // dave.greet();
+// dave.calcAge();
+
+// ---------------------
+
+// Primitives and reference values
+
+let lastName = "diaz";
+let oldLastName = lastName;
+lastName = "davis";
+
+// It works as expected: changing value of primitives in call stack
+console.log(lastName);
+
+// Doesn't work for HEAP References:
+
+const jessica = {
+  firstName: "Jessica",
+  lastName: "Williams",
+  age: 27,
+};
+const marriedJessica = jessica;
+// Here, we change the value AT THE REFERENCE, so it changes to 'jessica'
+// as well as 'marriedJessica'. Because both names hold the SAME address
+// in the HEAP
+marriedJessica.age = 28;
+console.log({ marriedJessica, jessica });
+
+// This doesnt work, because it changes the reference to a new object
+// in the HEAP. this can't happen because 'marriedJessica' is const.
+// marriedJessica = {};
+
+const jess2 = {
+  firstName: "Jessica",
+  lastName: "Williams",
+  age: 27,
 };
 
-// dave.greet();
-dave.calcAge();
+// This now works because we are assigning a NEW object in the HEAP
+// with a copy of jess2
+const jessCopy = Object.assign({}, jess2);
+jessCopy.lastName = "Sanchez";
+
+console.log({ jessCopy, jessica });
