@@ -85,8 +85,16 @@ const dave = {
   calcAge: function () {
     console.log(this); // This is "dave" object
     console.log(2023 - this.year); // It lets me access to "year" from the "dave" object
+
+    // this -> undefined because its a regular function call.
+    const isMillenial = function () {
+      console.log(1981 <= this.year <= 1996);
+    };
+
+    isMillenial();
   },
   greet: () => console.log(`Hey ${this.firstName}`),
 };
 
-dave.greet();
+// dave.greet();
+dave.calcAge();
