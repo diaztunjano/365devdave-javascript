@@ -58,6 +58,7 @@
 // Its still window object
 // The arrow function doesn't get a this keyword.
 // It will bring the one from its parent -> this lexical scope
+
 // const arrowAge = (birthYear) => {
 //   console.log(2023 - birthYear);
 //   console.log(this);
@@ -117,6 +118,7 @@ const jessica = {
   lastName: "Williams",
   age: 27,
 };
+
 const marriedJessica = jessica;
 
 // Here, we change the value AT THE REFERENCE, so it changes to 'jessica'
