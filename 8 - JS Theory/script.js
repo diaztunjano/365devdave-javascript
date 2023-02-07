@@ -51,3 +51,26 @@
 // ------------------------
 
 // THIS KEYWORD
+
+// gives the "window" object
+// console.log(this);
+
+// Its still window object
+// The arrow function doesn't get a this keyword.
+// It will bring the one from its parent -> this lexical scope
+// const arrowAge = (birthYear) => {
+//   console.log(2023 - birthYear);
+//   console.log(this);
+// };
+
+// arrowAge(1996);
+
+const dave = {
+  year: 1996,
+  calcAge: function () {
+    console.log(this); // This is "dave" object
+    console.log(2023 - this.year); // It lets me access to "year" from the "dave" object
+  },
+};
+
+dave.calcAge();
