@@ -34,3 +34,16 @@ const addExpr = function (a, b) {
 // --------
 
 const addArrow = (a, b) => a + b;
+
+// DONT USE VAR:
+
+if (!numProducts) {
+  console.log("Delete Everything! HEHE");
+}
+
+var numProducts = 10;
+
+// DONT USE VAR!
+// "Delete Everything! HEHE" Printed.
+// That is beacause before initialization, numProducts
+// is undefined because it is "var". So !undefined === true
