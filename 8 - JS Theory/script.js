@@ -65,12 +65,28 @@
 
 // arrowAge(1996);
 
+// const dave = {
+//   year: 1996,
+//   calcAge: function () {
+//     console.log(this); // This is "dave" object
+//     console.log(2023 - this.year); // It lets me access to "year" from the "dave" object
+//   },
+// };
+
+// dave.calcAge();
+
+// --------------------
+
+// ARROW FUNCTIONS:
+
 const dave = {
   year: 1996,
+  firstName: "El dave",
   calcAge: function () {
     console.log(this); // This is "dave" object
     console.log(2023 - this.year); // It lets me access to "year" from the "dave" object
   },
+  greet: () => console.log(`Hey ${this.firstName}`),
 };
 
-dave.calcAge();
+dave.greet();
