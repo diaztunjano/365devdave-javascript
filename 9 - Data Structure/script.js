@@ -35,8 +35,8 @@ const restaurant = {
 // --------------------- DESTRUCTURE ARRAYS:
 
 const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[1];
+// const a = arr[0];
+// const b = arr[1];
 const c = arr[2];
 
 // This is the same as:
@@ -70,35 +70,42 @@ const [l, , [m, n]] = nested;
 
 // --------------------- DESTRUCTURE OBJECTS:
 
-const restaurant = {
-  name: "Classico Italiano",
-  location: "Via Angelo Tavanti 23, Firenze, Italy",
-  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
-  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
-  mainMenu: ["Pizza", "Pasta", "Risotto"],
-
-  order: function (starterIdx, mainIdx) {
-    return [this.starterMenu[starterIdx], this.mainMenu[mainIdx]];
-  },
-
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-};
-
 const {
   name: restaurantName,
   openingHours: hours,
   categories: tags,
 } = restaurant;
+
+const { menu = [], starterMenu: starters = [] } = restaurant;
+
+// console.log(menu, starters);
+
+// Mutating variables:
+
+let a = 111;
+let b = 999;
+
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b); // 23, 7
+
+// Destructing opening hours:
+hours: {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+}
+const {
+  fri: { open, close },
+} = hours;
+
+console.log(open, close); // 11, 23
