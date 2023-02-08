@@ -12,6 +12,10 @@ const restaurant = {
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
 
+  order: function (starterIdx, mainIdx) {
+    return [this.starterMenu[starterIdx], this.mainMenu[mainIdx]];
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -35,18 +39,29 @@ const c = arr[2];
 
 // This is the same as:
 const [x, y, z] = arr;
-console.log(x, y, z); // 2, 3, 4
+// console.log(x, y, z); // 2, 3, 4
 
 const [first, , third] = restaurant.starterMenu;
-console.log(first, third);
+// console.log(first, third);
 
 // Switching variables order:
 let [main, , secondary] = restaurant.categories;
 const temp = main;
 main = secondary;
 secondary = temp;
-console.log(main, secondary);
+// console.log(main, secondary);
 
 // Now, with destructuring without using a temp variable:
 [main, secondary] = [secondary, main];
-console.log(main, secondary);
+// console.log(main, secondary);
+
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
+// Nested arrays:
+const nested = [2, 4, [5, 6]];
+const [i, , j] = nested;
+console.log(i, j); // [2, [5,6]]
+// If we want to destructure the nested array:
+const [l, , [m, n]] = nested;
+console.log(l, m, n); // 2 5 6
