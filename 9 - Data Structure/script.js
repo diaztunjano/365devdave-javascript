@@ -30,7 +30,22 @@ const restaurant = {
       close: 24,
     },
   },
+
+  orderDelivery: function ({ starterIdx, mainIdx, time, address }) {
+    console.log(`New order: 
+    Starter: ${this.starterMenu[starterIdx]} 
+    Main Course: ${this.mainMenu[mainIdx]}
+    Expected Delivery: ${time}
+    Address: ${address}`);
+  },
 };
+
+restaurant.orderDelivery({
+  starterIdx: 2,
+  mainIdx: 1,
+  time: "22:35",
+  address: " Calle 123",
+});
 
 // --------------------- DESTRUCTURE ARRAYS:
 
@@ -90,22 +105,10 @@ const obj = { a: 23, b: 7, c: 14 };
 console.log(a, b); // 23, 7
 
 // Destructing opening hours:
-hours: {
-  thu: {
-    open: 12,
-    close: 22,
-  },
-  fri: {
-    open: 11,
-    close: 23,
-  },
-  sat: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-}
 const {
   fri: { open, close },
 } = hours;
 
 console.log(open, close); // 11, 23
+
+// Destructing parameters:
