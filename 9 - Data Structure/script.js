@@ -37,5 +37,16 @@ const c = arr[2];
 const [x, y, z] = arr;
 console.log(x, y, z); // 2, 3, 4
 
-const [first, _, third] = restaurant.starterMenu;
+const [first, , third] = restaurant.starterMenu;
 console.log(first, third);
+
+// Switching variables order:
+let [main, , secondary] = restaurant.categories;
+const temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary);
+
+// Now, with destructuring without using a temp variable:
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
