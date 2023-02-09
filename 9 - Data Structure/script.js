@@ -165,6 +165,12 @@ const restaurant = {
   orderPasta: function (i1, i2, i3) {
     console.log(i1, i2, i3);
   },
+
+  orderPizza: function (mainIng, ...otherIng) {
+    console.log(
+      `The main ingredient is ${mainIng} with toppings of ${otherIng}`
+    );
+  },
 };
 
 // const ingredients = [
@@ -177,5 +183,30 @@ const restaurant = {
 
 // copying objects:
 
-const newResta = { ...restaurant };
-console.log(newResta);
+// const newResta = { ...restaurant };
+// console.log(newResta);
+
+// SPREAD: Because it goes on the RIGHT of the =
+const exampleArr = [1, 2, ...[3, 4, 5]];
+console.log(exampleArr); // [1, 2, 3, 4, 5]
+
+// REST: Goes on the LEFT of the =
+const [var1, var2, ...other] = ["hola", "jeje", "x", "w", "z"];
+console.log(other); // ['x', 'w', 'z']
+
+const { sat: saturday, ...otherDays } = restaurant.openingHours;
+
+console.log(saturday); // {open: 0, close: 24}
+
+// Spread functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
+};
+const result = add(2, 5, 6, 63, 3, 24, 4);
+console.log(result);
+
+restaurant.orderPizza("carne", "queso", "tomate");
