@@ -109,6 +109,16 @@ const {
   fri: { open, close },
 } = hours;
 
-console.log(open, close); // 11, 23
+// console.log(open, close); // 11, 23
 
 // Destructing parameters:
+
+// -----------------------
+
+// Destructuring Arrays
+
+const exampleArr = [1, 2, 3];
+
+const newArr = [0, ...exampleArr];
+
+console.log(newArr);
