@@ -128,6 +128,44 @@ const flights =
 // const completeMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 // console.log(completeMenu); // ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad', 'Pizza', 'Pasta', 'Risotto']
 
+// const ingredients = [
+//   prompt("Ingredient 1?"),
+//   prompt("Ingredient 2?"),
+//   prompt("Ingredient 3?"),
+// ];
+
+// const finalOrderPasta = restaurant.orderPasta(...ingredients);
+
+// copying objects:
+
+// const newResta = { ...restaurant };
+// console.log(newResta);
+
+// SPREAD: Because it goes on the RIGHT of the =
+// const exampleArr = [1, 2, ...[3, 4, 5]];
+// console.log(exampleArr); // [1, 2, 3, 4, 5]
+
+// // REST: Goes on the LEFT of the =
+// const [var1, var2, ...other] = ["hola", "jeje", "x", "w", "z"];
+// console.log(other); // ['x', 'w', 'z']
+
+// const { sat: saturday, ...otherDays } = restaurant.openingHours;
+
+// console.log(saturday); // {open: 0, close: 24}
+
+// // Spread functions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   return sum;
+// };
+// const result = add(2, 5, 6, 63, 3, 24, 4);
+// console.log(result);
+
+// restaurant.orderPizza("carne", "queso", "tomate");
+
 const restaurant = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -173,40 +211,11 @@ const restaurant = {
   },
 };
 
-// const ingredients = [
-//   prompt("Ingredient 1?"),
-//   prompt("Ingredient 2?"),
-//   prompt("Ingredient 3?"),
-// ];
+// ------------ && and || operators
 
-// const finalOrderPasta = restaurant.orderPasta(...ingredients);
+const operators = 4 || "dave";
+console.log(operators); // 4
 
-// copying objects:
+console.log(undefined || 0 || "hola" || 1 || null); // hola
 
-// const newResta = { ...restaurant };
-// console.log(newResta);
-
-// SPREAD: Because it goes on the RIGHT of the =
-// const exampleArr = [1, 2, ...[3, 4, 5]];
-// console.log(exampleArr); // [1, 2, 3, 4, 5]
-
-// // REST: Goes on the LEFT of the =
-// const [var1, var2, ...other] = ["hola", "jeje", "x", "w", "z"];
-// console.log(other); // ['x', 'w', 'z']
-
-// const { sat: saturday, ...otherDays } = restaurant.openingHours;
-
-// console.log(saturday); // {open: 0, close: 24}
-
-// // Spread functions
-// const add = function (...numbers) {
-//   let sum = 0;
-//   for (let i = 0; i < numbers.length; i++) {
-//     sum += numbers[i];
-//   }
-//   return sum;
-// };
-// const result = add(2, 5, 6, 63, 3, 24, 4);
-// console.log(result);
-
-// restaurant.orderPizza("carne", "queso", "tomate");
+console.log(0 && "dave"); // 0, because its the first 'faulthy' value
