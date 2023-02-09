@@ -187,26 +187,26 @@ const restaurant = {
 // console.log(newResta);
 
 // SPREAD: Because it goes on the RIGHT of the =
-const exampleArr = [1, 2, ...[3, 4, 5]];
-console.log(exampleArr); // [1, 2, 3, 4, 5]
+// const exampleArr = [1, 2, ...[3, 4, 5]];
+// console.log(exampleArr); // [1, 2, 3, 4, 5]
 
-// REST: Goes on the LEFT of the =
-const [var1, var2, ...other] = ["hola", "jeje", "x", "w", "z"];
-console.log(other); // ['x', 'w', 'z']
+// // REST: Goes on the LEFT of the =
+// const [var1, var2, ...other] = ["hola", "jeje", "x", "w", "z"];
+// console.log(other); // ['x', 'w', 'z']
 
-const { sat: saturday, ...otherDays } = restaurant.openingHours;
+// const { sat: saturday, ...otherDays } = restaurant.openingHours;
 
-console.log(saturday); // {open: 0, close: 24}
+// console.log(saturday); // {open: 0, close: 24}
 
-// Spread functions
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  return sum;
-};
-const result = add(2, 5, 6, 63, 3, 24, 4);
-console.log(result);
+// // Spread functions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   return sum;
+// };
+// const result = add(2, 5, 6, 63, 3, 24, 4);
+// console.log(result);
 
-restaurant.orderPizza("carne", "queso", "tomate");
+// restaurant.orderPizza("carne", "queso", "tomate");
