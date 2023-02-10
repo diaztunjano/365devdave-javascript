@@ -214,8 +214,34 @@ const restaurant = {
 // ------------ && and || operators
 
 const operators = 4 || "dave";
-console.log(operators); // 4
+// console.log(operators); // 4
 
-console.log(undefined || 0 || "hola" || 1 || null); // hola
+// console.log(undefined || 0 || "hola" || 1 || null); // hola
 
-console.log(0 && "dave"); // 0, because its the first 'faulthy' value
+// console.log(0 && "dave"); // 0, because its the first 'faulthy' value
+
+// console.log(0 ?? "dave");
+
+// _-------------------
+
+const rest1 = {
+  name: "Capri",
+  numGuests: 20,
+};
+
+const rest2 = {
+  name: "Capri",
+  owner: "Giorgio",
+};
+
+rest1.numGuests = rest1.numGuests || 10;
+rest2.numGuests = rest2.numGuests || 10;
+
+// SAME AS:
+rest1.numGuests =|| 10; // Assigns value to a variable if variable is FALSY
+rest2.numGuests =|| 10;
+
+console.log(rest1);
+console.log(rest2);
+
+
