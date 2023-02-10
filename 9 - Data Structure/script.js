@@ -244,8 +244,13 @@ const rest2 = {
 
 // NULLISH ASSIGNMENT OPERATOR
 // // SAME AS:
-rest1.numGuests ??= 10; // Assigns value to a variable if variable is FALSY
-rest2.numGuests ??= 10;
+// rest1.numGuests ??= 10; // Assigns value to a variable if variable is FALSY
+// rest2.numGuests ??= 10;
+
+// AND ASSIGNMENT OPERATOR
+
+rest1.owner = rest1.owner && "<ANONYMOUS>";
+rest2.owner = rest2.owner && "<ANONYMOUS>";
 
 console.log(rest1);
 console.log(rest2);
