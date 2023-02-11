@@ -408,77 +408,87 @@ as properties, and the number of goals as the value. In this game, it will look 
 GOOD LUCK 😀
 */
 
-const game = {
-  team1: "Bayern Munich",
-  team2: "Borrussia Dortmund",
-  players: [
-    [
-      "Neuer",
-      "Pavard",
-      "Martinez",
-      "Alaba",
-      "Davies",
-      "Kimmich",
-      "Goretzka",
-      "Coman",
-      "Muller",
-      "Gnarby",
-      "Lewandowski",
-    ],
-    [
-      "Burki",
-      "Schulz",
-      "Hummels",
-      "Akanji",
-      "Hakimi",
-      "Weigl",
-      "Witsel",
-      "Hazard",
-      "Brandt",
-      "Sancho",
-      "Gotze",
-    ],
-  ],
-  score: "4:0",
-  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
-  date: "Nov 9th, 2037",
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-  printGoals(...playerNames) {
-    console.log(`GOALS: ${this.score} - PLAYERS: ${playerNames}`);
-  },
+// const game = {
+//   team1: "Bayern Munich",
+//   team2: "Borrussia Dortmund",
+//   players: [
+//     [
+//       "Neuer",
+//       "Pavard",
+//       "Martinez",
+//       "Alaba",
+//       "Davies",
+//       "Kimmich",
+//       "Goretzka",
+//       "Coman",
+//       "Muller",
+//       "Gnarby",
+//       "Lewandowski",
+//     ],
+//     [
+//       "Burki",
+//       "Schulz",
+//       "Hummels",
+//       "Akanji",
+//       "Hakimi",
+//       "Weigl",
+//       "Witsel",
+//       "Hazard",
+//       "Brandt",
+//       "Sancho",
+//       "Gotze",
+//     ],
+//   ],
+//   score: "4:0",
+//   scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+//   date: "Nov 9th, 2037",
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+//   printGoals(...playerNames) {
+//     console.log(`GOALS: ${this.score} - PLAYERS: ${playerNames}`);
+//   },
 
-  printOdds() {
-    console.log(`
-    Odds of victory ${this.team1}: ${this.odds["team1"]}
-    Odds of draw - ${this.odds["x"]}
-    Odds of victory ${this.team2}: ${this.odds["team2"]}
-    
-    `);
-  },
-};
+//   printOdds() {
+//     console.log(`
+//     Odds of victory ${this.team1}: ${this.odds["team1"]}
+//     Odds of draw - ${this.odds["x"]}
+//     Odds of victory ${this.team2}: ${this.odds["team2"]}
 
-// 1:
-for (let scorer = 0; scorer < game.scored.length; scorer++) {
-  const player = game.scored[scorer];
-  console.log(`Goal ${scorer + 1}: ${player}`);
-}
+//     `);
+//   },
+// };
 
-// 2:
-const odds = Object.values(game.odds);
-const averageOdd = odds.reduce((a, b) => a + b) / odds.length;
-console.log(averageOdd);
+// // 1:
+// for (let scorer = 0; scorer < game.scored.length; scorer++) {
+//   const player = game.scored[scorer];
+//   console.log(`Goal ${scorer + 1}: ${player}`);
+// }
 
-//3:
-game.printOdds();
+// // 2:
+// const odds = Object.values(game.odds);
+// const averageOdd = odds.reduce((a, b) => a + b) / odds.length;
+// console.log(averageOdd);
 
-// Bonus:
-const scorers = {};
-for (let player = 0; player < game.scored.length; player++) {
-  const scorer = game.scored[player];
-  scorers[scorer] ? scorers[scorer]++ : (scorers[scorer] = 1);
-}
-console.log(scorers);
+// //3:
+// game.printOdds();
+
+// // Bonus:
+// const scorers = {};
+// for (let player = 0; player < game.scored.length; player++) {
+//   const scorer = game.scored[player];
+//   scorers[scorer] ? scorers[scorer]++ : (scorers[scorer] = 1);
+// }
+// console.log(scorers);
+
+// SETS:
+
+const orderSet = new Set(["pasta", "pasta", "pizza", "rissoto"]);
+console.log(orderSet); // Set(3) {'pasta', 'pizza', 'rissoto'}
+
+// Remove duplicate values from array
+const staff = ["waiter", "chef", "waiter", "manager", "chef", "waiter"];
+const uniqueStaff = [...new Set(staff)];
+console.log(uniqueStaff);
