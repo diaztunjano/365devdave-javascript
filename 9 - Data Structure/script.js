@@ -173,7 +173,7 @@ const restaurant = {
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
 
-  order: function (starterIdx, mainIdx) {
+  order(starterIdx, mainIdx) {
     return [this.starterMenu[starterIdx], this.mainMenu[mainIdx]];
   },
 
@@ -192,7 +192,7 @@ const restaurant = {
     },
   },
 
-  orderDelivery: function ({ starterIdx, mainIdx, time, address }) {
+  orderDelivery({ starterIdx, mainIdx, time, address }) {
     console.log(`New order: 
     Starter: ${this.starterMenu[starterIdx]} 
     Main Course: ${this.mainMenu[mainIdx]}
@@ -200,11 +200,11 @@ const restaurant = {
     Address: ${address}`);
   },
 
-  orderPasta: function (i1, i2, i3) {
+  orderPasta(i1, i2, i3) {
     console.log(i1, i2, i3);
   },
 
-  orderPizza: function (mainIng, ...otherIng) {
+  orderPizza(mainIng, ...otherIng) {
     console.log(
       `The main ingredient is ${mainIng} with toppings of ${otherIng}`
     );
@@ -357,3 +357,9 @@ const restaurant = {
 
 // oddTeam1 < oddTeam2 && console.log(`- Most likely to win: ${game.team1}`);
 // oddTeam1 > oddTeam2 && console.log(`- Most likely to win: ${game.team2}`);
+
+// ------------------- Methods:
+
+console.log(restaurant.order?.(0, 1) ?? "Method doesnt exists");
+
+// Looping:
