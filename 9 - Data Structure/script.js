@@ -479,10 +479,6 @@ game.printOdds();
 const scorers = {};
 for (let player = 0; player < game.scored.length; player++) {
   const scorer = game.scored[player];
-  if (Object.keys(scorers).includes(scorer)) {
-    scorers[scorer] += 1;
-  } else {
-    scorers[scorer] = 1;
-  }
+  scorers[scorer] ? scorers[scorer]++ : (scorers[scorer] = 1);
 }
 console.log(scorers);
