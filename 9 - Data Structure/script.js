@@ -360,6 +360,25 @@ const restaurant = {
 
 // ------------------- Methods:
 
-console.log(restaurant.order?.(0, 1) ?? "Method doesnt exists");
+// console.log(restaurant.order?.(0, 1) ?? "Method doesnt exists");
 
-// Looping:
+// Looping over KEYS:
+const properties = Object.keys(restaurant.openingHours);
+// console.log(properties); // ['thu', 'fri', 'sat']
+
+// Looping over VALUES:
+const openValues = Object.values(restaurant.openingHours);
+console.log(openValues); // [{…}, {…}, {…}] : Each with open and close as Keys.
+
+// Looping over VALUES:
+const openDaysInfo = Object.entries(restaurant.openingHours);
+// console.log(openDaysInfo); // [{…}, {…}, {…}] : Each with open and close as Keys.
+// returns an Array of Arrays:
+// Structure: [[key, value], ...]
+// Result: [['thu', {…}], ['fri', {…}], ['sat', {…}]]
+
+const openDaysInfo = Object.entries(restaurant.openingHours);
+
+for (const [key, { open, close }] of openDaysInfo) {
+  console.log(`On ${key} we are open from ${open} and close at ${close}`);
+}
