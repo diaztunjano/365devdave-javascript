@@ -360,25 +360,129 @@ const restaurant = {
 
 // ------------------- Methods:
 
-// console.log(restaurant.order?.(0, 1) ?? "Method doesnt exists");
+// // console.log(restaurant.order?.(0, 1) ?? "Method doesnt exists");
 
-// Looping over KEYS:
-const properties = Object.keys(restaurant.openingHours);
-// console.log(properties); // ['thu', 'fri', 'sat']
+// // Looping over KEYS:
+// const properties = Object.keys(restaurant.openingHours);
+// // console.log(properties); // ['thu', 'fri', 'sat']
 
-// Looping over VALUES:
-const openValues = Object.values(restaurant.openingHours);
-console.log(openValues); // [{…}, {…}, {…}] : Each with open and close as Keys.
+// // Looping over VALUES:
+// const openValues = Object.values(restaurant.openingHours);
+// console.log(openValues); // [{…}, {…}, {…}] : Each with open and close as Keys.
 
-// Looping over VALUES:
-const openDaysInfo = Object.entries(restaurant.openingHours);
-// console.log(openDaysInfo); // [{…}, {…}, {…}] : Each with open and close as Keys.
-// returns an Array of Arrays:
-// Structure: [[key, value], ...]
-// Result: [['thu', {…}], ['fri', {…}], ['sat', {…}]]
+// // Looping over VALUES:
+// const openDaysInfo = Object.entries(restaurant.openingHours);
+// // console.log(openDaysInfo); // [{…}, {…}, {…}] : Each with open and close as Keys.
+// // returns an Array of Arrays:
+// // Structure: [[key, value], ...]
+// // Result: [['thu', {…}], ['fri', {…}], ['sat', {…}]]
 
-const openDaysInfo = Object.entries(restaurant.openingHours);
+// const openDaysInfo = Object.entries(restaurant.openingHours);
 
-for (const [key, { open, close }] of openDaysInfo) {
-  console.log(`On ${key} we are open from ${open} and close at ${close}`);
+// for (const [key, { open, close }] of openDaysInfo) {
+//   console.log(`On ${key} we are open from ${open} and close at ${close}`);
+// }
+
+///////////////////////////////////////
+// Coding Challenge #2
+
+/* 
+Let's continue with our football betting app!
+1. Loop over the game.scored array and print each player name to the console,
+ along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console 
+(We already studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw").
+ HINT: Note how the odds and the game objects have the same property names 😉
+BONUS: Create an object called 'scorers' which contains the names of the players who scored 
+as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+GOOD LUCK 😀
+*/
+
+const game = {
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
+  players: [
+    [
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
+    ],
+    [
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
+    ],
+  ],
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+  printGoals(...playerNames) {
+    console.log(`GOALS: ${this.score} - PLAYERS: ${playerNames}`);
+  },
+
+  printOdds() {
+    console.log(`
+    Odds of victory ${this.team1}: ${this.odds["team1"]}
+    Odds of draw - ${this.odds["x"]}
+    Odds of victory ${this.team2}: ${this.odds["team2"]}
+    
+    `);
+  },
+};
+
+// 1:
+for (let scorer = 0; scorer < game.scored.length; scorer++) {
+  const player = game.scored[scorer];
+  console.log(`Goal ${scorer + 1}: ${player}`);
 }
+
+// 2:
+const odds = Object.values(game.odds);
+const averageOdd = odds.reduce((a, b) => a + b) / odds.length;
+console.log(averageOdd);
+
+//3:
+game.printOdds();
+
+// Bonus:
+const scorers = {};
+for (let player = 0; player < game.scored.length; player++) {
+  const scorer = game.scored[player];
+  if (Object.keys(scorers).includes(scorer)) {
+    scorers[scorer] += 1;
+  } else {
+    scorers[scorer] = 1;
+  }
+}
+console.log(scorers);
