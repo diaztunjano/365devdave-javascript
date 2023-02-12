@@ -485,10 +485,28 @@ GOOD LUCK 😀
 
 // SETS:
 
-const orderSet = new Set(["pasta", "pasta", "pizza", "rissoto"]);
-console.log(orderSet); // Set(3) {'pasta', 'pizza', 'rissoto'}
+// const orderSet = new Set(["pasta", "pasta", "pizza", "rissoto"]);
+// console.log(orderSet); // Set(3) {'pasta', 'pizza', 'rissoto'}
 
-// Remove duplicate values from array
-const staff = ["waiter", "chef", "waiter", "manager", "chef", "waiter"];
-const uniqueStaff = [...new Set(staff)];
-console.log(uniqueStaff);
+// // Remove duplicate values from array
+// const staff = ["waiter", "chef", "waiter", "manager", "chef", "waiter"];
+// const uniqueStaff = [...new Set(staff)];
+// console.log(uniqueStaff);
+
+// MAP
+
+const rest = new Map();
+rest.set("name", "Classico Italiano");
+rest.set(1, "Firenze, Italy");
+rest
+  .set("categories", "Firenze, Italy")
+  .set("open", 11)
+  .set("close", 23)
+  .set(true, "we are open")
+  .set(false, "we are closed");
+
+const time = 21;
+const isOpen = rest.get(time > rest.get("open") && time < rest.get("close"));
+console.log(isOpen); // we are open
+
+console.log(rest);
