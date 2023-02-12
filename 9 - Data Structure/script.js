@@ -377,7 +377,7 @@ const restaurant = {
 // // Structure: [[key, value], ...]
 // // Result: [['thu', {…}], ['fri', {…}], ['sat', {…}]]
 
-// const openDaysInfo = Object.entries(restaurant.openingHours);
+// const openDaysInfo = Object.entries(restaurant.x);
 
 // for (const [key, { open, close }] of openDaysInfo) {
 //   console.log(`On ${key} we are open from ${open} and close at ${close}`);
@@ -495,18 +495,40 @@ GOOD LUCK 😀
 
 // MAP
 
-const rest = new Map();
-rest.set("name", "Classico Italiano");
-rest.set(1, "Firenze, Italy");
-rest
-  .set("categories", "Firenze, Italy")
-  .set("open", 11)
-  .set("close", 23)
-  .set(true, "we are open")
-  .set(false, "we are closed");
+// const rest = new Map();
+// rest.set("name", "Classico Italiano");
+// rest.set(1, "Firenze, Italy");
+// rest
+//   .set("categories", "Firenze, Italy")
+//   .set("open", 11)
+//   .set("close", 23)
+//   .set(true, "we are open")
+//   .set(false, "we are closed");
 
-const time = 21;
-const isOpen = rest.get(time > rest.get("open") && time < rest.get("close"));
-console.log(isOpen); // we are open
+// const time = 21;
+// const isOpen = rest.get(time > rest.get("open") && time < rest.get("close"));
+// console.log(isOpen); // we are open
 
-console.log(rest);
+// console.log(rest);
+
+const question = new Map([
+  ["question", "Best language?"],
+  [1, "C"],
+  [2, "Python"],
+  [3, "Java"],
+  [4, "Javascript"],
+  ["correct", 3],
+  [true, "Correct!"],
+  [false, "Try again!"],
+]);
+
+console.log(question.get("question"));
+for (const [key, value] of question) {
+  if (typeof key === "number") {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+
+const answer = Number(prompt("You answer:")) === question.get("correct");
+console.log(answer);
+console.log(question.get(answer));
