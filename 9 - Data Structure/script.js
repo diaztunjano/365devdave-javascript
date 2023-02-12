@@ -581,3 +581,20 @@ GOOD LUCK 😀
 //   const gameTime = key <= 45 ? "FIRST HALF" : "SECOND HALF";
 //   console.log(`[${gameTime}] ${key}: ${value}`);
 // }
+
+const airline = "TAP Air Portugal";
+const plane = "A320";
+// These methods return a NEW string. Needs to be saved if I want to use it.
+console.log(airline.indexOf("r")); // 6
+console.log(airline.lastIndexOf("r")); // 10
+console.log(airline.indexOf("Air")); // 4
+console.log(airline.slice(4)); // 'Air Portugal'
+console.log(airline.slice(-2)); // 'Air Portugal'
+
+const checkMiddleSeat = (seat) => {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  return console.log(s === "B" || s === "E" ? "Yes! Middle seat" : "Nop! ");
+};
+
+checkMiddleSeat("11B");
