@@ -1,9 +1,5 @@
 "use strict";
 
-// Data needed for a later exercise
-const flights =
-  "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
-
 // Data needed for first part of the section
 // const restaurant = {
 //   name: "Classico Italiano",
@@ -582,30 +578,100 @@ GOOD LUCK 😀
 //   console.log(`[${gameTime}] ${key}: ${value}`);
 // }
 
-const airline = "TAP Air Portugal";
-const plane = "A320";
-// These methods return a NEW string. Needs to be saved if I want to use it.
-console.log(airline.indexOf("r")); // 6
-console.log(airline.lastIndexOf("r")); // 10
-console.log(airline.indexOf("Air")); // 4
-console.log(airline.slice(4)); // 'Air Portugal'
-console.log(airline.slice(-2)); // 'Air Portugal'
+// const airline = "TAP Air Portugal";
+// const plane = "A320";
+// // These methods return a NEW string. Needs to be saved if I want to use it.
+// console.log(airline.indexOf("r")); // 6
+// console.log(airline.lastIndexOf("r")); // 10
+// console.log(airline.indexOf("Air")); // 4
+// console.log(airline.slice(4)); // 'Air Portugal'
+// console.log(airline.slice(-2)); // 'Air Portugal'
 
-const checkMiddleSeat = (seat) => {
-  // B and E are middle seats
-  const s = seat.slice(-1);
-  return console.log(s === "B" || s === "E" ? "Yes! Middle seat" : "Nop! ");
-};
+// const checkMiddleSeat = (seat) => {
+//   // B and E are middle seats
+//   const s = seat.slice(-1);
+//   return console.log(s === "B" || s === "E" ? "Yes! Middle seat" : "Nop! ");
+// };
 
-checkMiddleSeat("11B");
+// checkMiddleSeat("11B");
 
-// Fix capitalization
+// // Fix capitalization
 
-const passenger = "DaVId";
-const pLower = passenger.toLowerCase();
-const correctName = passenger[0].toUpperCase() + pLower.slice(1);
-console.log(correctName);
+// const passenger = "DaVId";
+// const pLower = passenger.toLowerCase();
+// const correctName = passenger[0].toUpperCase() + pLower.slice(1);
+// console.log(correctName);
 
-console.log(passenger.replace("Id", "id")); // 'David
-console.log(passenger.includes("Id")); // true
-console.log(passenger.startsWith("D")); // true
+// console.log(passenger.replace("Id", "id")); // 'David
+// console.log(passenger.includes("Id")); // true
+// console.log(passenger.startsWith("D")); // true
+
+// STRINGS SPLIT
+
+// const [firstName, lastName] = "David Diaz";
+
+// function capitalizeName(name) {
+//   const names = name.split(" ");
+//   const fullName = [];
+
+//   for (const n of names) {
+//     fullName.push(n[0].toUpperCase() + n.slice(1));
+//   }
+
+//   return console.log(fullName.join(" "));
+// }
+
+// // capitalizeName("david diaz tunjano");
+
+// const maskCard = (number) => {
+//   const str = number + "";
+//   const digits = str.slice(-4);
+//   console.log(digits.padStart(12, "*"));
+// };
+
+// maskCard("1234 6543 2345 9876");
+
+///////////////////////////////////////
+// Coding Challenge #4
+
+/* 
+Write a program that receives a list of variable names written in 
+underscore_case and convert them to camelCase.
+
+The input will come from a textarea inserted into the DOM (see code below),
+ and conversion will happen when the button is pressed.
+
+THIS TEST DATA (pasted to textarea)
+underscore_case
+ first_name
+Some_Variable 
+  calculate_AGE
+delayed_departure
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
+HINT 1: Remember which character defines a new line in the textarea 😉
+HINT 2: The solution only needs to work for a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✅. Tackle that only after you have the variable name conversion working 😉
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. Then pause and continue!
+Afterwards, test with your own test data!
+GOOD LUCK 😀
+*/
+
+// document.body.append(document.createElement("textarea"));
+// document.body.append(document.createElement("button"));
+// const button = document.querySelector("button");
+
+// button.addEventListener("click", () => {
+//   const words = document.querySelector("textarea").value.split("\n");
+
+//   for (const [i, word] of words.entries()) {
+//     const [first, second] = word.toLowerCase().trim().split("_");
+//     const finalWord =
+//       first.toLowerCase() + second[0].toUpperCase() + second.slice(1);
+//     console.log(finalWord.padEnd(20) + `${"✅".repeat(i + 1)}`);
+//   }
+// });
