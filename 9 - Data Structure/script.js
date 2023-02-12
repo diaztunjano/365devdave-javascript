@@ -598,3 +598,14 @@ const checkMiddleSeat = (seat) => {
 };
 
 checkMiddleSeat("11B");
+
+// Fix capitalization
+
+const passenger = "DaVId";
+const pLower = passenger.toLowerCase();
+const correctName = passenger[0].toUpperCase() + pLower.slice(1);
+console.log(correctName);
+
+console.log(passenger.replace("Id", "id")); // 'David
+console.log(passenger.includes("Id")); // true
+console.log(passenger.startsWith("D")); // true
