@@ -61,12 +61,16 @@
 // 4 ------------
 
 const greet = (greeting) => {
-  return function (name) {
+  (name) => {
     console.log(`${greeting} ${name}`);
   };
 };
 
 // Returns a function
 const greeterHey = greet("Jelou");
+
 // We call that function with a name as parameter
 greeterHey("Dave"); // "Jelou Dave"
+
+// The same as:
+greet("Hello")("Jonas");
