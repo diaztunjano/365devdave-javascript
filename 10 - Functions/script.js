@@ -41,19 +41,32 @@
 
 // 3 -----------
 
-const oneWord = (str) => {
-  return str.replace(/ /g, "").toLowerCase();
+// const oneWord = (str) => {
+//   return str.replace(/ /g, "").toLowerCase();
+// };
+
+// const upperFirstWord = (str) => {
+//   const [first, ...others] = str.split(" ");
+//   return [first.toUpperCase(), ...others].join(" ");
+// };
+
+// const transformer = (str, fn) => {
+//   console.log(`Original string: ${str}`);
+//   console.log(`Transformed string: ${fn(str)}`);
+// };
+
+// transformer("Javascript is the best!", upperFirstWord); //Javascript is the best!
+// transformer("Javascript is the best!", oneWord); // javascriptisthebest!
+
+// 4 ------------
+
+const greet = (greeting) => {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
 };
 
-const upperFirstWord = (str) => {
-  const [first, ...others] = str.split(" ");
-  return [first.toUpperCase(), ...others].join(" ");
-};
-
-const transformer = (str, fn) => {
-  console.log(`Original string: ${str}`);
-  console.log(`Transformed string: ${fn(str)}`);
-};
-
-transformer("Javascript is the best!", upperFirstWord); //Javascript is the best!
-transformer("Javascript is the best!", oneWord); // javascriptisthebest!
+// Returns a function
+const greeterHey = greet("Jelou");
+// We call that function with a name as parameter
+greeterHey("Dave"); // "Jelou Dave"
