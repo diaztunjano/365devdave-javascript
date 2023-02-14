@@ -105,6 +105,19 @@ const eurowings = {
 
 // Copying the function to a new variable 'book'
 const book = lan.book;
-book(23, "Venena"); // ERROR: Can't read airline of undefined
+// book(23, "Venena"); // ERROR: Can't read airline of undefined
 // This happens because 'book' now is a regular function and the 'this'
 // element now is undefined.
+
+book.call(eurowings, 23, "Chavo");
+console.log(eurowings);
+
+// apply method:
+const flightData = [543, "George Cooper"];
+book.apply(eurowings, flightData);
+console.log(eurowings);
+
+// Better with spread:
+const flightData2 = [599, "Jonas Johnson"];
+book.call(eurowings, ...flightData2);
+console.log(eurowings);
