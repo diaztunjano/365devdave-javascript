@@ -60,17 +60,51 @@
 
 // 4 ------------
 
-const greet = (greeting) => {
-  (name) => {
-    console.log(`${greeting} ${name}`);
-  };
+// const greet = (greeting) => {
+//   (name) => {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+// // Returns a function
+// const greeterHey = greet("Jelou");
+
+// // We call that function with a name as parameter
+// greeterHey("Dave"); // "Jelou Dave"
+
+// // The same as:
+// greet("Hello")("Jonas");
+
+// 5 ----------------
+
+const lan = {
+  airline: "LATAM",
+  iataCode: "LH",
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
 };
 
-// Returns a function
-const greeterHey = greet("Jelou");
+lan.book(239, "Dave");
+console.log(lan);
 
-// We call that function with a name as parameter
-greeterHey("Dave"); // "Jelou Dave"
+const eurowings = {
+  airline: "Eurowings",
+  iataCode: "EW",
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+  },
+};
 
-// The same as:
-greet("Hello")("Jonas");
+// Copying the function to a new variable 'book'
+const book = lan.book;
+book(23, "Venena"); // ERROR: Can't read airline of undefined
+// This happens because 'book' now is a regular function and the 'this'
+// element now is undefined.
