@@ -144,3 +144,18 @@ eurowings.buyPlane = function name(params) {
 document
   .querySelector(".buy")
   .addEventListener("click", eurowings.buyPlane.bind(eurowings));
+
+const addTax = (rate, value) => value + value * rate;
+// Using null as the element that will point to use "this" keyword
+const addVAT = addTax.bind(null, 0.23);
+
+// console.log(addVAT(100)); // 123
+
+const VATcalc = function (rate) {
+  return function (value) {
+    console.log(value + value * rate);
+  };
+};
+
+const a = VATcalc(0.23);
+a(100);
