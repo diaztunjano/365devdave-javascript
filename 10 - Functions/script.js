@@ -79,34 +79,34 @@
 
 // 5 ---------------- CALL AND APPLY KEYWORDS
 
-// const lan = {
-//   airline: "LATAM",
-//   iataCode: "LH",
-//   bookings: [],
-//   book(flightNum, name) {
-//     console.log(
-//       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
-//     );
-//     this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
-//   },
-// };
+const lan = {
+  airline: "LATAM",
+  iataCode: "LH",
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
 
 // lan.book(239, "Dave");
 // console.log(lan);
 
-// const eurowings = {
-//   airline: "Eurowings",
-//   iataCode: "EW",
-//   bookings: [],
-//   book(flightNum, name) {
-//     console.log(
-//       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
-//     );
-//   },
-// };
+const eurowings = {
+  airline: "Eurowings",
+  iataCode: "EW",
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+  },
+};
 
 // // Copying the function to a new variable 'book'
-// const book = lan.book;
+const book = lan.book;
 // // book(23, "Venena"); // ERROR: Can't read airline of undefined
 // // This happens because 'book' now is a regular function and the 'this'
 // // element now is undefined.
@@ -119,7 +119,13 @@
 // book.apply(eurowings, flightData);
 // console.log(eurowings);
 
-// // Better with spread:
-// const flightData2 = [599, "Jonas Johnson"];
-// book.call(eurowings, ...flightData2);
-// console.log(eurowings);
+// Better with spread:
+const flightData2 = [599, "Jonas Johnson"];
+book.call(eurowings, ...flightData2);
+console.log(eurowings);
+
+// ----------------
+// doesn't call the function right away. It sets it on a const.
+// It assigns the "this" keyword to eurowings
+const bookEW = book.bind(eurowings);
+bookEW(24, "Serena Williams");
