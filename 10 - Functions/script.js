@@ -275,12 +275,13 @@ const g = function () {
   };
 };
 
-const g = function () {
-  const a = 23;
+const h = function () {
+  const b = 100;
   f = function () {
-    console.log(a * 2);
+    console.log(b * 2);
   };
 };
 
 g();
+h();
 f();
