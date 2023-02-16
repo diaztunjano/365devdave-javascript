@@ -263,3 +263,5 @@ const booker = secureBooking();
 booker(); // 1
 booker(); // 2
 booker(); // 3
+
+console.dir(booker);
