@@ -268,6 +268,7 @@ GOOD LUCK 😀
 
 let f;
 
+// Here, we assign f as a function
 const g = function () {
   const a = 23;
   f = function () {
@@ -275,6 +276,7 @@ const g = function () {
   };
 };
 
+// Now, f gets re assigned again.
 const h = function () {
   const b = 100;
   f = function () {
@@ -283,5 +285,10 @@ const h = function () {
 };
 
 g();
+f(); // runs with initial g() assignation
 h();
-f();
+f(); // runs with h() assignation
+// here, f remembers the variables of
+// the execution context on which it was created
+// first, remembers 'a'
+// then, 'b'
