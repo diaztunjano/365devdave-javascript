@@ -204,45 +204,62 @@ So what shoud the this keyword look like in this situation?
 BONUS TEST DATA 1: [5, 2, 3]
 BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 GOOD LUCK 😀
-*/
+// */
 
-const poll = {
-  question: "What is your favorite language?",
-  options: ["0: Javascript", "1: Python", "2: Rust", "3: Go"],
-  answers: new Array(4).fill(0),
-  registerNewAnswer() {
-    const displayMessage = `${this.question}
-        ${this.options[0]}
-        ${this.options[1]}
-        ${this.options[2]}
-        ${this.options[3]}
-        (Write option number)`;
-    const answer = Number(prompt(displayMessage));
-    if ([0, 1, 2, 3].includes(answer)) {
-      this.answers[answer]++;
-      this.displayResults("Array");
-    } else {
-      console.log("Input a valid answer");
-    }
-  },
-  displayResults(type = "string") {
-    if (type === "string") {
-      console.log(
-        `Poll results are ${this.answers[0]}, ${this.answers[1]}, ${this.answers[2]}, ${this.answers[3]}`
-      );
-    } else {
-      console.log(this.answers);
-    }
-  },
+// const poll = {
+//   question: "What is your favorite language?",
+//   options: ["0: Javascript", "1: Python", "2: Rust", "3: Go"],
+//   answers: new Array(4).fill(0),
+//   registerNewAnswer() {
+//     const displayMessage = `${this.question}
+//         ${this.options[0]}
+//         ${this.options[1]}
+//         ${this.options[2]}
+//         ${this.options[3]}
+//         (Write option number)`;
+//     const answer = Number(prompt(displayMessage));
+//     if ([0, 1, 2, 3].includes(answer)) {
+//       this.answers[answer]++;
+//       this.displayResults("Array");
+//     } else {
+//       console.log("Input a valid answer");
+//     }
+//   },
+//   displayResults(type = "string") {
+//     if (type === "string") {
+//       console.log(
+//         `Poll results are ${this.answers[0]}, ${this.answers[1]}, ${this.answers[2]}, ${this.answers[3]}`
+//       );
+//     } else {
+//       console.log(this.answers);
+//     }
+//   },
+// };
+
+// // bind to functions! not objects.
+// // the callback function of addEventListener will point 'this' to the
+// // .poll
+// const pollEl = poll.displayResults.bind(poll);
+
+// document.querySelector(".poll").addEventListener("click", pollEl);
+
+// poll.registerNewAnswer();
+
+// const newArrDisplay = poll.displayResults.call({ answers: [5, 2, 3] });
+
+// ----------------------- CLOSURES
+
+const secureBooking = function () {
+  let passCount = 0;
+
+  return function () {
+    passCount++;
+    console.log({ passCount });
+  };
 };
 
-// bind to functions! not objects.
-// the callback function of addEventListener will point 'this' to the
-// .poll
-const pollEl = poll.displayResults.bind(poll);
+const booker = secureBooking();
 
-document.querySelector(".poll").addEventListener("click", pollEl);
-
-poll.registerNewAnswer();
-
-const newArrDisplay = poll.displayResults.call({ answers: [5, 2, 3] });
+booker(); // 1
+booker(); // 2
+booker(); // 3
