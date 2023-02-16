@@ -249,19 +249,38 @@ GOOD LUCK 😀
 
 // ----------------------- CLOSURES
 
-const secureBooking = function () {
-  let passCount = 0;
+// const secureBooking = function () {
+//   let passCount = 0;
 
-  return function () {
-    passCount++;
-    console.log({ passCount });
+//   return function () {
+//     passCount++;
+//     console.log({ passCount });
+//   };
+// };
+
+// const booker = secureBooking();
+
+// booker(); // 1
+// booker(); // 2
+// booker(); // 3
+
+// console.dir(booker);
+
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
   };
 };
 
-const booker = secureBooking();
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
 
-booker(); // 1
-booker(); // 2
-booker(); // 3
-
-console.dir(booker);
+g();
+f();
