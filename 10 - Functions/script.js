@@ -296,7 +296,11 @@ f(); // runs with h() assignation
 const boardPass = (n, wait) => {
   const perGroup = n / 3;
 
-  // Timer
+  // Timer -> this function is executed 3 seconds after boardPass()
+  // finishes execution. This is only possible because setTimeout
+  // has closure. So it remembers the variables created on its parent's
+  // Execution Context.
+  //
   setTimeout(function () {
     console.log(`we are now boarding all ${n} passengers. 
     There are 3 groups, each with ${perGroup} passengers.
@@ -305,3 +309,5 @@ const boardPass = (n, wait) => {
 
   console.log(`Boarding in ${wait} seconds.`);
 };
+
+boardPass(180, 3);
