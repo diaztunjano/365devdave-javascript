@@ -312,6 +312,10 @@ GOOD LUCK 😀
 
 // boardPass(180, 3);
 
+// Challenge:
+
+// the callback is ONLY executed when the body is clicked.
+//
 (function (params) {
   const header = document.querySelector("h1");
   header.style.color = "red";
