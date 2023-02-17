@@ -266,48 +266,56 @@ GOOD LUCK 😀
 
 // console.dir(booker);
 
-let f;
+// let f;
 
-// Here, we assign f as a function
-const g = function () {
-  const a = 23;
-  f = function () {
-    console.log(a * 2);
-  };
-};
+// // Here, we assign f as a function
+// const g = function () {
+//   const a = 23;
+//   f = function () {
+//     console.log(a * 2);
+//   };
+// };
 
-// Now, f gets re assigned again.
-const h = function () {
-  const b = 100;
-  f = function () {
-    console.log(b * 2);
-  };
-};
+// // Now, f gets re assigned again.
+// const h = function () {
+//   const b = 100;
+//   f = function () {
+//     console.log(b * 2);
+//   };
+// };
 
-g();
-f(); // runs with initial g() assignation
-h();
-f(); // runs with h() assignation
-// here, f remembers the variables of
-// the execution context on which it was created
-// first, remembers 'a'
-// then, 'b'
+// g();
+// f(); // runs with initial g() assignation
+// h();
+// f(); // runs with h() assignation
+// // here, f remembers the variables of
+// // the execution context on which it was created
+// // first, remembers 'a'
+// // then, 'b'
 
-const boardPass = (n, wait) => {
-  const perGroup = n / 3;
+// const boardPass = (n, wait) => {
+//   const perGroup = n / 3;
 
-  // Timer -> this function is executed 3 seconds after boardPass()
-  // finishes execution. This is only possible because setTimeout
-  // has closure. So it remembers the variables created on its parent's
-  // Execution Context.
-  //
-  setTimeout(function () {
-    console.log(`we are now boarding all ${n} passengers. 
-    There are 3 groups, each with ${perGroup} passengers.
-  `);
-  }, wait * 1000);
+//   // Timer -> this function is executed 3 seconds after boardPass()
+//   // finishes execution. This is only possible because setTimeout
+//   // has closure. So it remembers the variables created on its parent's
+//   // Execution Context.
+//   //
+//   setTimeout(function () {
+//     console.log(`we are now boarding all ${n} passengers.
+//     There are 3 groups, each with ${perGroup} passengers.
+//   `);
+//   }, wait * 1000);
 
-  console.log(`Boarding in ${wait} seconds.`);
-};
+//   console.log(`Boarding in ${wait} seconds.`);
+// };
 
-boardPass(180, 3);
+// boardPass(180, 3);
+
+(function (params) {
+  const header = document.querySelector("h1");
+  header.style.color = "red";
+  document.body.addEventListener("click", () => {
+    header.style.color = "blue";
+  });
+})();
