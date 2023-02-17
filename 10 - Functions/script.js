@@ -292,3 +292,8 @@ f(); // runs with h() assignation
 // the execution context on which it was created
 // first, remembers 'a'
 // then, 'b'
+
+const boardPass = (n, wait) => {
+  const perGroup = n / 3;
+  console.log(`Boarding in ${wait} seconds.`);
+};
