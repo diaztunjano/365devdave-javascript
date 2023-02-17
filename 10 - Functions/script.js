@@ -295,5 +295,13 @@ f(); // runs with h() assignation
 
 const boardPass = (n, wait) => {
   const perGroup = n / 3;
+
+  // Timer
+  setTimeout(function () {
+    console.log(`we are now boarding all ${n} passengers. 
+    There are 3 groups, each with ${perGroup} passengers.
+  `);
+  }, wait * 1000);
+
   console.log(`Boarding in ${wait} seconds.`);
 };
