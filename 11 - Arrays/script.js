@@ -85,3 +85,19 @@ console.log(arr.slice()); // Creates a copy of the new array,
 
 console.log(arr.splice(2)); // [4,5,6]
 console.log(arr); // [2,3]  splice mutates the original array
+console.log(arr.splice(-1)); // [6]
+console.log(arr.splice(1, 3)); // From position 1, delete 3 elements
+
+// REVERSE
+const arr2 = ["j", "i", "h", "g", "f"];
+console.log(arr2.reverse()); // ['f', 'g', 'h', 'i', 'j']
+console.log(arr2); // ['f', 'g', 'h', 'i', 'j'] - mutates the orig. array
+
+// CONCAT
+const letters = arr.concat(arr2);
+console.log(letters);
+// The same as:
+const letters2 = [...arr, ...arr2];
+console.log(letters2);
+
+// JOIN
