@@ -71,33 +71,54 @@ const currencies = new Map([
   ["GBP", "Pound sterling"],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
 //------ 1
 
-const arr = [2, 3, 4, 5, 6];
-console.log(arr.slice(2)); // Doesn't mutate original array
-console.log(arr.slice(-2)); // Last 2 elements
-console.log(arr.slice()); // Creates a copy of the new array,
-// but its better to use the spread operator
+// const arr = [2, 3, 4, 5, 6];
+// console.log(arr.slice(2)); // Doesn't mutate original array
+// console.log(arr.slice(-2)); // Last 2 elements
+// console.log(arr.slice()); // Creates a copy of the new array,
+// // but its better to use the spread operator
 
-console.log(arr.splice(2)); // [4,5,6]
-console.log(arr); // [2,3]  splice mutates the original array
-console.log(arr.splice(-1)); // [6]
-console.log(arr.splice(1, 3)); // From position 1, delete 3 elements
+// console.log(arr.splice(2)); // [4,5,6]
+// console.log(arr); // [2,3]  splice mutates the original array
+// console.log(arr.splice(-1)); // [6]
+// console.log(arr.splice(1, 3)); // From position 1, delete 3 elements
 
-// REVERSE
-const arr2 = ["j", "i", "h", "g", "f"];
-console.log(arr2.reverse()); // ['f', 'g', 'h', 'i', 'j']
-console.log(arr2); // ['f', 'g', 'h', 'i', 'j'] - mutates the orig. array
+// // REVERSE
+// const arr2 = ["j", "i", "h", "g", "f"];
+// console.log(arr2.reverse()); // ['f', 'g', 'h', 'i', 'j']
+// console.log(arr2); // ['f', 'g', 'h', 'i', 'j'] - mutates the orig. array
 
-// CONCAT
-const letters = arr.concat(arr2);
-console.log(letters);
-// The same as:
-const letters2 = [...arr, ...arr2];
-console.log(letters2);
+// // CONCAT
+// const letters = arr.concat(arr2); // [2, 'f', 'g', 'h', 'i', 'j']
+// console.log(letters);
+// // The same as:
+// const letters2 = [...arr, ...arr2];
+// console.log(letters2);
 
-// JOIN
+// // JOIN
+// console.log(letters.join(" - ")); // 2 - f - g - h - i - j
+
+// // ------------ 2
+
+// // getting last value
+// console.log(arr.slice(-1)[0]);
+// console.log(arr[arr.length - 1]);
+// console.log(arr.at(-1));
+
+// -------------- 3
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// We pass a callback function to the forEach
+movements.forEach((mov, i) => {
+  if (mov > 0) {
+    console.log(`${i + 1} - Deposited: ${mov}`);
+  } else {
+    console.log(`${i + 1} - Withdrew: ${Math.abs(mov)}`);
+  }
+});
