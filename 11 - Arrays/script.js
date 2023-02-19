@@ -199,9 +199,7 @@ const checkDogs = (dogsJulia, dogsKate) => {
       dog >= 3
         ? `Dog number ${i + 1} is an adult`
         : `Dog number ${i + 1} is a puppy`;
-    console.log(printString);
   });
-  console.log(completeDogs);
 };
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
