@@ -191,4 +191,17 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 GOOD LUCK 😀
 */
 
-const checkDogs = (dogs) => {};
+const checkDogs = (dogsJulia, dogsKate) => {
+  const realJuliaInfo = dogsJulia.slice(1, -2);
+  const completeDogs = [...realJuliaInfo, ...dogsKate];
+  completeDogs.forEach((dog, i) => {
+    const printString =
+      dog >= 3
+        ? `Dog number ${i + 1} is an adult`
+        : `Dog number ${i + 1} is a puppy`;
+    console.log(printString);
+  });
+  console.log(completeDogs);
+};
+
+checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
