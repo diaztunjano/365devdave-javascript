@@ -132,7 +132,7 @@ displayMovements(account1.movements);
 
 // -------------- 3
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // // We pass a callback function to the forEach
 // movements.forEach((mov, i) => {
@@ -191,15 +191,27 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 GOOD LUCK 😀
 */
 
-const checkDogs = (dogsJulia, dogsKate) => {
-  const realJuliaInfo = dogsJulia.slice(1, -2);
-  const completeDogs = [...realJuliaInfo, ...dogsKate];
-  completeDogs.forEach((dog, i) => {
-    const printString =
-      dog >= 3
-        ? `Dog number ${i + 1} is an adult`
-        : `Dog number ${i + 1} is a puppy`;
-  });
-};
+// const checkDogs = (dogsJulia, dogsKate) => {
+//   const realJuliaInfo = dogsJulia.slice(1, -2);
+//   const completeDogs = [...realJuliaInfo, ...dogsKate];
+//   completeDogs.forEach((dog, i) => {
+//     const printString =
+//       dog >= 3
+//         ? `Dog number ${i + 1} is an adult`
+//         : `Dog number ${i + 1} is a puppy`;
+//   });
+// };
 
-checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+// checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+
+// ------------------------ 7 MAP
+
+const eurToUSD = 2;
+
+console.log(movements);
+
+const movUSD = movements.map((mov) => {
+  return mov * eurToUSD;
+});
+
+console.log(movUSD);
