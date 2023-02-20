@@ -210,8 +210,6 @@ const eurToUSD = 2;
 
 console.log(movements);
 
-const movUSD = movements.map((mov) => {
-  return mov * eurToUSD;
-});
+const movUSD = movements.map((mov) => mov * eurToUSD);
 
 console.log(movUSD);
