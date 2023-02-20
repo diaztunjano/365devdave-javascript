@@ -206,15 +206,36 @@ GOOD LUCK 😀
 
 // ------------------------ 7 MAP
 
-const eurToUSD = 2;
+// const eurToUSD = 2;
 
-// Multiplies * 2 each movement
-const movUSD = movements.map((mov) => mov * eurToUSD);
+// // Multiplies * 2 each movement
+// const movUSD = movements.map((mov) => mov * eurToUSD);
 
-console.log(movUSD);
+// const movDescription = movements.map((mov, i) => {
+//   return `${i + 1} - You ${mov > 0 ? "deposited" : "withdrew"}`;
+// });
 
-const movDescription = movements.map((mov, i) => {
-  return `${i + 1} - You ${mov > 0 ? "deposited" : "withdrew"}`;
-});
+//  -------------------- 8 MAP
 
-console.log(movDescription);
+const user = "dave diaz tunjnano";
+
+// In this case, we dont use map, because we don't want to return a new array
+const createUsernames = (accounts) => {
+  accounts.forEach((acc) => {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((user) => user[0])
+      .join("");
+  });
+};
+
+createUsernames(accounts);
+
+const username = user
+  .toLowerCase()
+  .split(" ")
+  .map((user) => user[0])
+  .join("");
+
+console.log(username);
