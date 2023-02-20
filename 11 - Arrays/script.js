@@ -208,8 +208,13 @@ GOOD LUCK 😀
 
 const eurToUSD = 2;
 
-console.log(movements);
-
+// Multiplies * 2 each movement
 const movUSD = movements.map((mov) => mov * eurToUSD);
 
 console.log(movUSD);
+
+const movDescription = movements.map((mov, i) => {
+  return `${i + 1} - You ${mov > 0 ? "deposited" : "withdrew"}`;
+});
+
+console.log(movDescription);
