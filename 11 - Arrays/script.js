@@ -258,3 +258,8 @@ console.log(filterMovs);
 
 // accum ---> SNOWBALL
 // In each iteration, the curr goes changing and the accum is the snowball
+
+// Now, we are getting the max value of movements array
+
+const maxValue = movements.reduce((acc, curr) => (curr > acc ? curr : acc), 0);
+console.log(maxValue);
