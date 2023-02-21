@@ -245,3 +245,11 @@ GOOD LUCK 😀
 const filterMovs = movements.filter((mov) => mov > 100);
 
 console.log(filterMovs);
+
+// ---------------10 REDUCE
+
+// accum ---> SNOWBALL
+// In each iteration, the curr goes changing and the accum is the snowball
+const balance = movements.reduce((acc, curr) => acc + curr, 0);
+
+console.log(balance);
