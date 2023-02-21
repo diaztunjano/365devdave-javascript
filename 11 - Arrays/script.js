@@ -241,3 +241,7 @@ GOOD LUCK 😀
 // console.log(username);
 
 // ----------------- 9 FIlTER
+
+const filterMovs = movements.filter((mov) => mov > 100);
+
+console.log(filterMovs);
