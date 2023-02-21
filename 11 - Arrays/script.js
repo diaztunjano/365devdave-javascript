@@ -217,25 +217,27 @@ GOOD LUCK 😀
 
 //  -------------------- 8 MAP
 
-const user = "dave diaz tunjnano";
+// const user = "dave diaz tunjnano";
 
-// In this case, we dont use map, because we don't want to return a new array
-const createUsernames = (accounts) => {
-  accounts.forEach((acc) => {
-    acc.username = acc.owner
-      .toLowerCase()
-      .split(" ")
-      .map((user) => user[0])
-      .join("");
-  });
-};
+// // In this case, we dont use map, because we don't want to return a new array
+// const createUsernames = (accounts) => {
+//   accounts.forEach((acc) => {
+//     acc.username = acc.owner
+//       .toLowerCase()
+//       .split(" ")
+//       .map((user) => user[0])
+//       .join("");
+//   });
+// };
 
-createUsernames(accounts);
+// createUsernames(accounts);
 
-const username = user
-  .toLowerCase()
-  .split(" ")
-  .map((user) => user[0])
-  .join("");
+// const username = user
+//   .toLowerCase()
+//   .split(" ")
+//   .map((user) => user[0])
+//   .join("");
 
-console.log(username);
+// console.log(username);
+
+// ----------------- 9 FIlTER
