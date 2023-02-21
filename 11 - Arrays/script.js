@@ -261,5 +261,8 @@ console.log(filterMovs);
 
 // Now, we are getting the max value of movements array
 
-const maxValue = movements.reduce((acc, curr) => (curr > acc ? curr : acc), 0);
+const maxValue = movements.reduce(
+  (acc, curr) => (curr > acc ? curr : acc),
+  movements[0]
+);
 console.log(maxValue);
