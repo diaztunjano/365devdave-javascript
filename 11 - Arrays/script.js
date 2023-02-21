@@ -81,6 +81,14 @@ const displayMovements = (movements) => {
 
 displayMovements(account1.movements);
 
+// Call and print balance
+const calcDisplayBalance = (movements) => {
+  const balance = movements.reduce((acc, curr) => acc + curr, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+calcDisplayBalance(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -250,6 +258,3 @@ console.log(filterMovs);
 
 // accum ---> SNOWBALL
 // In each iteration, the curr goes changing and the accum is the snowball
-const balance = movements.reduce((acc, curr) => acc + curr, 0);
-
-console.log(balance);
