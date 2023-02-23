@@ -293,3 +293,17 @@ TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
 TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 GOOD LUCK 😀
 */
+
+const calcAverageHumanAge = (ages) => {
+  ages.map((age) => {
+    let humanAge = 0;
+    if (age <= 2) {
+      humanAge = 2 * age;
+    } else {
+      humanAge = 16 + age * 4;
+    }
+    console.log(humanAge);
+  });
+};
+
+calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
