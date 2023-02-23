@@ -295,15 +295,13 @@ GOOD LUCK 😀
 */
 
 const calcAverageHumanAge = (ages) => {
+  const finalAges = [];
   ages.map((age) => {
-    let humanAge = 0;
-    if (age <= 2) {
-      humanAge = 2 * age;
-    } else {
-      humanAge = 16 + age * 4;
-    }
+    const humanAge = age <= 2 ? 2 * age : 16 + age * 4;
     console.log(humanAge);
+    finalAges.push(humanAge);
   });
+  finalAges.filter((dog) => dog <= 18);
 };
 
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
