@@ -296,12 +296,18 @@ GOOD LUCK 😀
 
 const calcAverageHumanAge = (ages) => {
   const finalAges = [];
+
   ages.map((age) => {
     const humanAge = age <= 2 ? 2 * age : 16 + age * 4;
     console.log(humanAge);
     finalAges.push(humanAge);
   });
+
   finalAges.filter((dog) => dog <= 18);
+
+  const averageAge =
+    finalAges.reduce((acc, curr) => acc + curr) / finalAges.length;
+  console.log(`The average age is ${averageAge}`);
 };
 
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
