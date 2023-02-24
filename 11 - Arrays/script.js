@@ -294,20 +294,22 @@ TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 GOOD LUCK 😀
 */
 
-const calcAverageHumanAge = (ages) => {
-  const finalAges = [];
+// const calcAverageHumanAge = (ages) => {
+//   const humanAges = ages.map((age) => (age <= 2 ? 2 * age : 16 + age * 4));
 
-  ages.map((age) => {
-    const humanAge = age <= 2 ? 2 * age : 16 + age * 4;
-    console.log(humanAge);
-    finalAges.push(humanAge);
-  });
+//   humanAges.filter((dog) => dog <= 18);
 
-  finalAges.filter((dog) => dog <= 18);
+//   const averageAge =
+//     humanAges.reduce((acc, curr) => acc + curr) / humanAges.length;
+//   console.log(`The average age is ${averageAge}`);
+// };
 
-  const averageAge =
-    finalAges.reduce((acc, curr) => acc + curr) / finalAges.length;
-  console.log(`The average age is ${averageAge}`);
-};
+// calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 
-calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+// --------------------- 12:
+
+const euroToUSD = 1.1;
+movements
+  .filter((mov) => mov > 0)
+  .map((mov) => euroToUSD * mov)
+  .reduce((acc, mov) => acc + mov, 0);
