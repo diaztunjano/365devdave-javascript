@@ -359,13 +359,13 @@ GOOD LUCK 😀
 */
 
 const calcAverageHumanAge = (ages) => {
-  const averageAge = ages
+  const averageAges = ages
     .map((age) => (age <= 2 ? 2 * age : 16 + age * 4))
     .filter((dog) => dog <= 18)
     .reduce((acc, curr, i, arr) => {
       return (acc + curr) / arr.length;
     });
-  console.log(`The average age is ${averageAge}`);
+  console.log(`The average age is ${averageAges}`);
 };
 
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
