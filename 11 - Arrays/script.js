@@ -84,10 +84,37 @@ displayMovements(account1.movements);
 // Call and print balance
 const calcDisplayBalance = (movements) => {
   const balance = movements.reduce((acc, curr) => acc + curr, 0);
-  labelBalance.textContent = `${balance} EUR`;
+  labelBalance.textContent = `${balance} €`;
 };
 
 calcDisplayBalance(account1.movements);
+
+const calcDisplaySummary = (movements) => {
+  const incomes = movements
+    .filter((mov) => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumIn.textContent = `${incomes} €`;
+
+  const outcomes = movements
+    .filter((mov) => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumOut.textContent = `${Math.abs(outcomes)} €`;
+
+  const interests = movements
+    .filter((mov) => mov > 0)
+    .map((deposit) => (deposit * 1.2) / 100)
+    .filter((int, i, arr) => {
+      console.log(arr);
+      return int >= 1;
+    })
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumInterest.textContent = `${Math.abs(interests)} €`;
+};
+
+calcDisplaySummary(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -308,8 +335,12 @@ GOOD LUCK 😀
 
 // --------------------- 12:
 
-const euroToUSD = 1.1;
-movements
-  .filter((mov) => mov > 0)
-  .map((mov) => euroToUSD * mov)
-  .reduce((acc, mov) => acc + mov, 0);
+// const euroToUSD = 1.1;
+// const totalDepositUDS = movements
+//   .filter((mov) => mov > 0)
+//   .map((mov, i, arr) => {
+//     // Good use case for "arr" parameter : debugging
+//     console.log(arr);
+//     return euroToUSD * mov;
+//   })
+//   .reduce((acc, mov) => acc + mov, 0);
