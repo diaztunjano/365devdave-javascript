@@ -377,4 +377,5 @@ const lessZero = movements.find((mov) => mov < 0);
 console.log(lessZero);
 
 const jessOwner = accounts.find((acc) => acc.owner === "Jessica Davis");
+
 console.log(jessOwner);
