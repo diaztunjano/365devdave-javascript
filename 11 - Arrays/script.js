@@ -375,3 +375,6 @@ GOOD LUCK 😀
 const lessZero = movements.find((mov) => mov < 0);
 // Returns the first element of the array that satisfies the condition
 console.log(lessZero);
+
+const jessOwner = accounts.find((acc) => acc.owner === "Jessica Davis");
+console.log(jessOwner);
