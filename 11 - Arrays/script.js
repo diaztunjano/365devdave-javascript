@@ -85,7 +85,9 @@ const calcDisplayBalance = (movements) => {
   labelBalance.textContent = `${balance} €`;
 };
 
-const calcDisplaySummary = (movements) => {
+const calcDisplaySummary = (account) => {
+  let movements = account.movements;
+  let interest = account.interestRate;
   const incomes = movements
     .filter((mov) => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
@@ -100,7 +102,7 @@ const calcDisplaySummary = (movements) => {
 
   const interests = movements
     .filter((mov) => mov > 0)
-    .map((deposit) => (deposit * 1.2) / 100)
+    .map((deposit) => (deposit * interest) / 100)
     .filter((int, i, arr) => {
       console.log(arr);
       return int >= 1;
@@ -148,7 +150,11 @@ btnLogin.addEventListener("click", (e) => {
     calcDisplayBalance(currentAccount.movements);
 
     // Display summary
-    calcDisplaySummary(currentAccount.movements);
+    calcDisplaySummary(currentAccount);
+
+    // Clear input fields
+    inputLoginUsername.value = inputLoginPin.value = "";
+    inputLoginPin.blur();
   }
 });
 
