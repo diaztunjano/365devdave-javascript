@@ -116,11 +116,32 @@ const calcDisplaySummary = (movements) => {
 
 calcDisplaySummary(account1.movements);
 
-// Event handler:
+// In this case, we dont use map, because we don't want to return a new array
+const createUsernames = (accounts) => {
+  accounts.forEach((acc) => {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((user) => user[0])
+      .join("");
+  });
+};
 
+createUsernames(accounts);
+
+let currentAccount;
+
+// Event handler:
 btnLogin.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log("Login");
+  currentAccount = accounts.find(
+    (acc) => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    console.log("LOGIN");
+  } else {
+  }
 });
 
 /////////////////////////////////////////////////
@@ -258,29 +279,6 @@ GOOD LUCK 😀
 // });
 
 //  -------------------- 8 MAP
-
-// const user = "dave diaz tunjnano";
-
-// // In this case, we dont use map, because we don't want to return a new array
-// const createUsernames = (accounts) => {
-//   accounts.forEach((acc) => {
-//     acc.username = acc.owner
-//       .toLowerCase()
-//       .split(" ")
-//       .map((user) => user[0])
-//       .join("");
-//   });
-// };
-
-// createUsernames(accounts);
-
-// const username = user
-//   .toLowerCase()
-//   .split(" ")
-//   .map((user) => user[0])
-//   .join("");
-
-// console.log(username);
 
 // ----------------- 9 FIlTER
 
