@@ -80,9 +80,9 @@ const displayMovements = (movements) => {
 };
 
 // Call and print balance
-const calcDisplayBalance = (movements) => {
-  const balance = movements.reduce((acc, curr) => acc + curr, 0);
-  labelBalance.textContent = `${balance} €`;
+const calcDisplayBalance = (acc) => {
+  acc.balance = acc.movements.reduce((acc, curr) => acc + curr, 0);
+  labelBalance.textContent = `${acc.balance} €`;
 };
 
 const calcDisplaySummary = (account) => {
@@ -127,12 +127,15 @@ createUsernames(accounts);
 
 let currentAccount;
 
-// Event handler:
+// Event handler to login:
 btnLogin.addEventListener("click", (e) => {
   e.preventDefault();
+  // Find the current Account
   currentAccount = accounts.find(
     (acc) => acc.username === inputLoginUsername.value
   );
+
+  // Check password
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     // Display UI and message
     labelWelcome.textContent = `Welcome back ${
@@ -145,7 +148,7 @@ btnLogin.addEventListener("click", (e) => {
     displayMovements(currentAccount.movements);
 
     // Display balance
-    calcDisplayBalance(currentAccount.movements);
+    calcDisplayBalance(currentAccount);
 
     // Display summary
     calcDisplaySummary(currentAccount);
@@ -154,6 +157,14 @@ btnLogin.addEventListener("click", (e) => {
     inputLoginUsername.value = inputLoginPin.value = "";
     inputLoginPin.blur();
   }
+});
+
+btnTransfer.addEventListener("click", (e) => {
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    (acc) => acc.username === inputTransferTo.value
+  );
 });
 
 /////////////////////////////////////////////////
