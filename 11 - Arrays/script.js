@@ -184,6 +184,7 @@ btnTransfer.addEventListener("click", (e) => {
     // Update UI
     updateUI(currentAccount);
   }
+  inputTransferAmount.value = inputTransferTo.value = "";
 });
 
 /////////////////////////////////////////////////
