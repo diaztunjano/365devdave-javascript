@@ -127,15 +127,15 @@ createUsernames(accounts);
 
 let currentAccount;
 
-const updateUI = (currentAccount) => {
+const updateUI = (acc) => {
   // Display movements
-  displayMovements(currentAccount.movements);
+  displayMovements(acc.movements);
 
   // Display balance
-  calcDisplayBalance(currentAccount);
+  calcDisplayBalance(acc);
 
   // Display summary
-  calcDisplaySummary(currentAccount);
+  calcDisplaySummary(acc);
 };
 
 // Event handler to login:
@@ -155,6 +155,7 @@ btnLogin.addEventListener("click", (e) => {
 
     containerApp.style.opacity = 100;
 
+    // Update UI
     updateUI(currentAccount);
 
     // Clear input fields
@@ -179,6 +180,9 @@ btnTransfer.addEventListener("click", (e) => {
     console.log("Transfer valid");
     currentAccount.movements.push(-amount);
     receiverAcc.movements.push(amount);
+
+    // Update UI
+    updateUI(currentAccount);
   }
 });
 
