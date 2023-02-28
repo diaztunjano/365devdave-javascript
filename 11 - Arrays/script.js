@@ -116,6 +116,13 @@ const calcDisplaySummary = (movements) => {
 
 calcDisplaySummary(account1.movements);
 
+// Event handler:
+
+btnLogin.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("Login");
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -372,10 +379,12 @@ GOOD LUCK 😀
 
 // ----------13 : FIND
 
-const lessZero = movements.find((mov) => mov < 0);
-// Returns the first element of the array that satisfies the condition
-console.log(lessZero);
+// const lessZero = movements.find((mov) => mov < 0);
+// // Returns the first element of the array that satisfies the condition
+// console.log(lessZero);
 
-const jessOwner = accounts.find((acc) => acc.owner === "Jessica Davis");
+// const jessOwner = accounts.find((acc) => acc.owner === "Jessica Davis");
 
-console.log(jessOwner);
+// console.log(jessOwner);
+
+// ------------- 14 :
