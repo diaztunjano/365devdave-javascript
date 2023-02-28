@@ -79,15 +79,11 @@ const displayMovements = (movements) => {
   });
 };
 
-displayMovements(account1.movements);
-
 // Call and print balance
 const calcDisplayBalance = (movements) => {
   const balance = movements.reduce((acc, curr) => acc + curr, 0);
   labelBalance.textContent = `${balance} €`;
 };
-
-calcDisplayBalance(account1.movements);
 
 const calcDisplaySummary = (movements) => {
   const incomes = movements
@@ -113,8 +109,6 @@ const calcDisplaySummary = (movements) => {
 
   labelSumInterest.textContent = `${Math.abs(interests)} €`;
 };
-
-calcDisplaySummary(account1.movements);
 
 // In this case, we dont use map, because we don't want to return a new array
 const createUsernames = (accounts) => {
@@ -143,15 +137,18 @@ btnLogin.addEventListener("click", (e) => {
     // Display UI and message
     labelWelcome.textContent = `Welcome back ${
       currentAccount.owner.split(" ")[0]
-    }`;
+    }!`;
 
     containerApp.style.opacity = 100;
 
     // Display movements
+    displayMovements(currentAccount.movements);
 
     // Display balance
+    calcDisplayBalance(currentAccount.movements);
 
     // Display summary
+    calcDisplaySummary(currentAccount.movements);
   }
 });
 
