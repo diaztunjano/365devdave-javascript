@@ -127,6 +127,17 @@ createUsernames(accounts);
 
 let currentAccount;
 
+const updateUI = (currentAccount) => {
+  // Display movements
+  displayMovements(currentAccount.movements);
+
+  // Display balance
+  calcDisplayBalance(currentAccount);
+
+  // Display summary
+  calcDisplaySummary(currentAccount);
+};
+
 // Event handler to login:
 btnLogin.addEventListener("click", (e) => {
   e.preventDefault();
@@ -144,14 +155,7 @@ btnLogin.addEventListener("click", (e) => {
 
     containerApp.style.opacity = 100;
 
-    // Display movements
-    displayMovements(currentAccount.movements);
-
-    // Display balance
-    calcDisplayBalance(currentAccount);
-
-    // Display summary
-    calcDisplaySummary(currentAccount);
+    updateUI(currentAccount);
 
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = "";
@@ -165,6 +169,17 @@ btnTransfer.addEventListener("click", (e) => {
   const receiverAcc = accounts.find(
     (acc) => acc.username === inputTransferTo.value
   );
+
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    currentAccount.balance >= amount &&
+    receiverAcc?.username !== currentAccount.username
+  ) {
+    console.log("Transfer valid");
+    currentAccount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
+  }
 });
 
 /////////////////////////////////////////////////
