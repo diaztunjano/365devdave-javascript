@@ -1,5 +1,7 @@
 "use strict";
 
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
@@ -201,11 +203,16 @@ btnClose.addEventListener("click", (e) => {
     accounts.splice(index, 1);
     console.log(accounts);
 
-    // HIde ui
+    // Hide ui
     containerApp.style.opacity = 0;
   }
   inputCloseUsername.value = inputClosePin.value = "";
 });
+
+// SOME
+
+const anyDeposits = movements.some((mov) => mov > 0);
+console.log(anyDeposits);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -257,8 +264,6 @@ btnClose.addEventListener("click", (e) => {
 // console.log(arr.at(-1));
 
 // -------------- 3
-
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // // We pass a callback function to the forEach
 // movements.forEach((mov, i) => {
