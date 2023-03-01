@@ -209,10 +209,13 @@ btnClose.addEventListener("click", (e) => {
   inputCloseUsername.value = inputClosePin.value = "";
 });
 
-// SOME
+// // SOME
+// const anyDeposits = movements.some((mov) => mov > 0);
+// console.log(anyDeposits); //True
 
-const anyDeposits = movements.some((mov) => mov > 0);
-// console.log(anyDeposits);
+// //EVERY
+// const everyDeposits = movements.every((mov) => mov > 0);
+// console.log(everyDeposits) // False
 
 btnLoan.addEventListener("click", (e) => {
   e.preventDefault();
@@ -222,8 +225,6 @@ btnLoan.addEventListener("click", (e) => {
     amount > 0 &&
     currentAccount.movements.some((mov) => mov >= amount * 0.1)
   ) {
-    console.log("correct");
-
     currentAccount.movements.push(amount);
 
     //Update UI
