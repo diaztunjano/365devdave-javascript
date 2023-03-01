@@ -186,6 +186,16 @@ btnTransfer.addEventListener("click", (e) => {
   inputTransferAmount.value = inputTransferTo.value = "";
 });
 
+btnClose.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount?.pin
+  ) {
+  }
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
