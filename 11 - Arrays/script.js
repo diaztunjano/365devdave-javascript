@@ -212,7 +212,26 @@ btnClose.addEventListener("click", (e) => {
 // SOME
 
 const anyDeposits = movements.some((mov) => mov > 0);
-console.log(anyDeposits);
+// console.log(anyDeposits);
+
+btnLoan.addEventListener("click", (e) => {
+  e.preventDefault();
+  const amount = Number(inputLoanAmount.value);
+
+  if (
+    amount > 0 &&
+    currentAccount.movements.some((mov) => mov >= amount * 0.1)
+  ) {
+    console.log("correct");
+
+    currentAccount.movements.push(amount);
+
+    //Update UI
+    updateUI(currentAccount);
+  }
+
+  inputLoanAmount.value = "";
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
