@@ -240,7 +240,7 @@ const allMovements = accMovements.flat();
 
 const overallBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
 
-console.log(overallBalance);
+// console.log(overallBalance);
 
 // Chaining:
 
@@ -249,7 +249,7 @@ const overallBal = accounts
   .flat()
   .reduce((acc, mov) => acc + mov, 0);
 
-console.log(overallBal);
+// console.log(overallBal);
 
 //flatMap
 
@@ -257,7 +257,7 @@ const overallBalFlatMap = accounts
   .flatMap((acc) => acc.movements)
   .reduce((acc, mov) => acc + mov, 0);
 
-console.log(overallBalFlatMap);
+// console.log(overallBalFlatMap);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
