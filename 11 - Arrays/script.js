@@ -473,4 +473,15 @@ GOOD LUCK 😀
 
 // console.log(jessOwner);
 
-// ------------- 14 :
+// ------------- 14 : FLAT
+
+const arrDeep = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+const arrDeeper = [
+  [["a", "b", "c"], 2, 3],
+  [4, 5, 6],
+];
+console.log(arrDeep.flat()); // [1,2,3,4,5,6]
+console.log(arrDeeper.flat(2)); // ['a', 'b', 'c', 2, 3, 4, 5, 6]
