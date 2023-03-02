@@ -251,6 +251,14 @@ const overallBal = accounts
 
 console.log(overallBal);
 
+//flatMap
+
+const overallBalFlatMap = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(overallBalFlatMap);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
