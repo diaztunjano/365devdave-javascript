@@ -238,9 +238,18 @@ const accMovements = accounts.map((acc) => acc.movements);
 
 const allMovements = accMovements.flat();
 
-const overallBalance = allMovements.reduce((acc, mov) => acc + mov);
+const overallBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
 
 console.log(overallBalance);
+
+// Chaining:
+
+const overallBal = accounts
+  .map((acc) => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(overallBal);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
