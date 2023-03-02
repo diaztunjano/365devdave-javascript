@@ -234,6 +234,14 @@ btnLoan.addEventListener("click", (e) => {
   inputLoanAmount.value = "";
 });
 
+const accMovements = accounts.map((acc) => acc.movements);
+
+const allMovements = accMovements.flat();
+
+const overallBalance = allMovements.reduce((acc, mov) => acc + mov);
+
+console.log(overallBalance);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -475,13 +483,13 @@ GOOD LUCK 😀
 
 // ------------- 14 : FLAT
 
-const arrDeep = [
-  [1, 2, 3],
-  [4, 5, 6],
-];
-const arrDeeper = [
-  [["a", "b", "c"], 2, 3],
-  [4, 5, 6],
-];
-console.log(arrDeep.flat()); // [1,2,3,4,5,6]
-console.log(arrDeeper.flat(2)); // ['a', 'b', 'c', 2, 3, 4, 5, 6]
+// const arrDeep = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+// ];
+// const arrDeeper = [
+//   [["a", "b", "c"], 2, 3],
+//   [4, 5, 6],
+// ];
+// console.log(arrDeep.flat()); // [1,2,3,4,5,6]
+// console.log(arrDeeper.flat(2)); // ['a', 'b', 'c', 2, 3, 4, 5, 6]
