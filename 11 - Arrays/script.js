@@ -510,3 +510,13 @@ GOOD LUCK 😀
 // ];
 // console.log(arrDeep.flat()); // [1,2,3,4,5,6]
 // console.log(arrDeeper.flat(2)); // ['a', 'b', 'c', 2, 3, 4, 5, 6]
+
+/// ----------------- SORT
+
+console.log(movements);
+movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (a < b) return -1;
+});
+
+console.log(movements);
