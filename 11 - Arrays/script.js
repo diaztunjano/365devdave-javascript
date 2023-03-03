@@ -262,6 +262,14 @@ const overallBalFlatMap = accounts
 
 // console.log(overallBalFlatMap);
 
+let isSorted = false;
+
+btnSort.addEventListener("click", (e) => {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !isSorted);
+  isSorted = !isSorted;
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
