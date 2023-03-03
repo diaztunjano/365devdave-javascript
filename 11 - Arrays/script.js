@@ -514,9 +514,12 @@ GOOD LUCK 😀
 /// ----------------- SORT
 
 console.log(movements);
-movements.sort((a, b) => {
-  if (a > b) return 1;
-  if (a < b) return -1;
-});
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (a < b) return -1;
+// });
+
+//Ascending
+movements.sort((a, b) => a - b);
 
 console.log(movements);
