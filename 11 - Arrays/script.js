@@ -646,4 +646,42 @@ const correctWeight = dogs.map((dog) => {
   dog["recommendedFood"] = dog.weight ** 0.75 * 28;
 });
 
+console.log(dogs);
+
 // 2-.
+
+const sarah = dogs.filter((dog) => dog.owners.includes("Sarah"))[0];
+
+function isCorrectWeight(dog) {
+  return (
+    dog.curFood > dog.recommendedFood * 0.9 &&
+    dog.curFood < dog.recommendedFood * 1.1
+  );
+}
+
+console.log(isCorrectWeight(sarah));
+
+// 3-
+const ownersEatTooMuch = [];
+const ownersEatTooLittle = [];
+
+function isEatingTooMuch(dog) {
+  return dog.curFood > dog.recommendedFood * 1.1;
+}
+
+function isEatingTooLittle(dog) {
+  return dog.curFood < dog.recommendedFood * 0.9;
+}
+
+dogs.map((dog) =>
+  isEatingTooLittle(dog)
+    ? ownersEatTooLittle.push(dog.owners)
+    : isEatingTooMuch(dog)
+    ? ownersEatTooMuch.push(dog.owners)
+    : console.log("Is eating correct")
+);
+
+console.log(ownersEatTooMuch);
+console.log(ownersEatTooLittle);
+
+// 4 .
