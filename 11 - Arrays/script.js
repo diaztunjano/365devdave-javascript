@@ -539,5 +539,9 @@ GOOD LUCK 😀
 
 // MUltiple ways
 
-console.log([1, 2, 3, 4, 5]);
-console.log(new Array(1, 2, 3, 4, 5));
+// console.log([1, 2, 3, 4, 5]);
+// console.log(new Array(1, 2, 3, 4, 5));
+
+const z = Array.from({ length: 7 }, (_, i) => Math.random() * 6);
+
+console.log(z);
