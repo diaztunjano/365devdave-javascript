@@ -685,3 +685,17 @@ console.log(ownersEatTooMuch);
 console.log(ownersEatTooLittle);
 
 // 4 .
+
+ownersEatTooMuch.forEach((dog) => {
+  console.log(`The dog of ${dog.owners} eat TOO much`);
+});
+
+ownersEatTooLittle.forEach((dog) => {
+  console.log(dog);
+
+  console.log(
+    `The dog of ${
+      (dog.owners.reduce((owner, acc) => owner + acc), "")
+    } eat TOO little`
+  );
+});
