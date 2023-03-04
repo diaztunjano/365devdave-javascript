@@ -548,5 +548,33 @@ GOOD LUCK 😀
 
 // Array Methods Practice
 
-const bankDepositSum = accounts.flatMap((acc) => acc.movements);
+const bankDepositSum = accounts
+  .flatMap((acc) => acc.movements)
+  .filter((mov) => mov > 0)
+  .reduce((sum, curr) => sum + curr, 0);
+
 console.log(bankDepositSum);
+
+//2.
+
+// Getting all deposits >= 1000 using reduce
+const numDeposit1000 = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce((count, curr) => (curr >= 1000 ? count + 1 : count), 0);
+
+console.log(numDeposit1000);
+
+// 3.
+
+const sums = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce(
+    (sums, cur) => {
+      // cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+      sums[cur > 0 ? "deposits" : "withdrawals"] += cur;
+      return sums;
+    },
+    { deposits: 0, withdrawals: 0 }
+  );
+
+console.log(sums);
