@@ -659,15 +659,6 @@ function isCorrectWeight(dog) {
   );
 }
 
-console.log(isCorrectWeight(sarah));
-console.log("first");
-console.log("first");
-console.log("first");
-console.log("first");
-console.log("first");
-console.log("first");
-console.log("first");
-
 // 3-
 const ownersEatTooMuch = [];
 const ownersEatTooLittle = [];
