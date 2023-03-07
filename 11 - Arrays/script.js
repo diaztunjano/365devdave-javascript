@@ -731,6 +731,8 @@ console.log(arrOkayFood);
 
 // 8 ----
 
-const sortedFood = dogs.sort((a, b) => a.recommendedFood - b.recommendedFood);
+const sortedFood = dogs
+  .slice()
+  .sort((a, b) => a.recommendedFood - b.recommendedFood);
 
 console.log(sortedFood);
