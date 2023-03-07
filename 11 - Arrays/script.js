@@ -696,7 +696,7 @@ ownersEatTooMuch.forEach((owners) => {
 });
 outputTooMuch += " dogs eat too much!";
 
-console.log(outputTooMuch);
+// console.log(outputTooMuch);
 
 let outputTooLittle = "";
 ownersEatTooLittle.forEach((owners) => {
@@ -710,4 +710,27 @@ ownersEatTooLittle.forEach((owners) => {
 });
 outputTooLittle += " dogs eat too little!";
 
-console.log(outputTooLittle);
+// console.log(outputTooLittle);
+
+// 5 ------
+
+const isExactFood = dogs.some((dog) => dog.curFood === dog.recommendedFood);
+
+console.log(isExactFood);
+
+// 6 - ---
+
+const isOkayFood = dogs.some((dog) => isCorrectWeight(dog));
+console.log(isOkayFood);
+
+// 7 ---
+
+const arrOkayFood = dogs.filter((dog) => isCorrectWeight(dog));
+
+console.log(arrOkayFood);
+
+// 8 ----
+
+const sortedFood = dogs.sort((a, b) => a.recommendedFood - b.recommendedFood);
+
+console.log(sortedFood);
