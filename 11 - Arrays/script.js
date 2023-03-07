@@ -697,3 +697,17 @@ ownersEatTooMuch.forEach((owners) => {
 outputTooMuch += " dogs eat too much!";
 
 console.log(outputTooMuch);
+
+let outputTooLittle = "";
+ownersEatTooLittle.forEach((owners) => {
+  for (let i = 0; i < owners.length; i++) {
+    let owner = owners[i];
+    outputTooLittle =
+      i !== ownersEatTooLittle.length - 1
+        ? outputTooLittle + `${owner}'s`
+        : outputTooLittle + `${owner} and `;
+  }
+});
+outputTooLittle += " dogs eat too little!";
+
+console.log(outputTooLittle);
