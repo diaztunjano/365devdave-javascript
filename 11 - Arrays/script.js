@@ -646,7 +646,7 @@ const correctWeight = dogs.map((dog) => {
   dog["recommendedFood"] = dog.weight ** 0.75 * 28;
 });
 
-console.log(dogs);
+// console.log(dogs);
 
 // 2-.
 
@@ -680,20 +680,20 @@ dogs.map((dog) =>
 );
 
 console.log(ownersEatTooMuch);
-console.log(ownersEatTooLittle);
+// console.log(ownersEatTooLittle);
 
 // 4 .
 
-ownersEatTooMuch.forEach((dog) => {
-  console.log(`The dog of ${dog.owners} eat TOO much`);
+let outputTooMuch = "";
+ownersEatTooMuch.forEach((owners) => {
+  for (let i = 0; i < owners.length; i++) {
+    let owner = owners[i];
+    outputTooMuch =
+      i < ownersEatTooMuch.length - 1
+        ? outputTooMuch + `${owner} and `
+        : outputTooMuch + `${owner}'s`;
+  }
 });
+outputTooMuch += " dogs eat too much!";
 
-ownersEatTooLittle.forEach((dog) => {
-  console.log(dog);
-
-  console.log(
-    `The dog of ${
-      (dog.owners.reduce((owner, acc) => owner + acc), "")
-    } eat TOO little`
-  );
-});
+console.log(outputTooMuch);
