@@ -164,7 +164,7 @@ btnLogin.addEventListener("click", function (e) {
   );
   console.log(currentAccount);
 
-  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+  if (currentAccount?.pin === +inputLoginPin.value) {
     // Display UI and message
     labelWelcome.textContent = `Welcome back, ${
       currentAccount.owner.split(" ")[0]
@@ -182,7 +182,7 @@ btnLogin.addEventListener("click", function (e) {
 
 btnTransfer.addEventListener("click", function (e) {
   e.preventDefault();
-  const amount = Number(inputTransferAmount.value);
+  const amount = +inputTransferAmount.value;
   const receiverAcc = accounts.find(
     (acc) => acc.username === inputTransferTo.value
   );
@@ -206,7 +206,7 @@ btnTransfer.addEventListener("click", function (e) {
 btnLoan.addEventListener("click", function (e) {
   e.preventDefault();
 
-  const amount = Number(inputLoanAmount.value);
+  const amount = +inputLoanAmount.value;
 
   if (
     amount > 0 &&
@@ -226,7 +226,7 @@ btnClose.addEventListener("click", function (e) {
 
   if (
     inputCloseUsername.value === currentAccount.username &&
-    Number(inputClosePin.value) === currentAccount.pin
+    +inputClosePin.value === currentAccount.pin
   ) {
     const index = accounts.findIndex(
       (acc) => acc.username === currentAccount.username
@@ -254,3 +254,20 @@ btnSort.addEventListener("click", function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+
+// 1 - Converting and checking numbers
+
+// Conversions
+console.log(Number("23"));
+
+// Parsing
+// Tries to read the number and transforms it into Int
+console.log(Number.parseInt("24ew")); // 24
+console.log(Number.parseFloat("2.4ew")); // 2.4
+
+// Check is value is Not a Number (NaN)
+console.log(Number.isNaN(23 / 0));
+
+// Checking is value is a number
+console.log(Number.isFinite(20)); // true
+console.log(Number.isFinite("20")); // false
