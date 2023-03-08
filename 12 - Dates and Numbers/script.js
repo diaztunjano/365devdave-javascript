@@ -293,3 +293,21 @@ console.log(Math.floor(23.6)); // 23
 
 // Rounding decimals
 console.log((2.7).toFixed(0)); // 3 as string
+
+// 3 ---------------------------- Remainder operator
+
+console.log(5 % 2); // 5 / 2 = (2 * 2) + 1 -> Returns 1.
+
+const isEven = (n) => n % 2 === 0;
+
+console.log(isEven(12342)); // true
+console.log(isEven(12343)); // false
+
+//
+// labelBalance.addEventListener("click", () => {
+//   [...document.querySelectorAll(".movements__row")].forEach((row, i) => {
+//     if (i % 2 === 0) {
+//       row.style.backgroundColor = "orangered";
+//     }
+//   });
+// });
