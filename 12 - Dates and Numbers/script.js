@@ -266,8 +266,23 @@ console.log(Number.parseInt("24ew")); // 24
 console.log(Number.parseFloat("2.4ew")); // 2.4
 
 // Check is value is Not a Number (NaN)
-console.log(Number.isNaN(23 / 0));
+console.log(Number.isNaN(23)); // false
+console.log(Number.isNaN(0 / 0)); // true
 
 // Checking is value is a number
 console.log(Number.isFinite(20)); // true
 console.log(Number.isFinite("20")); // false
+
+// 2 -- Math and Rounding
+
+console.log(Math.sqrt(25)); // 5
+console.log(Math.max(25, 1, 23)); // 25
+
+// Trunc
+console.log(Math.trunc(Math.random() * 6) + 1);
+
+// RandomInt between min and max
+const randomInt = (min, max) =>
+  Math.trunc(Math.random() * (max - min) + 1 + min);
+
+console.log(randomInt(10, 20));
