@@ -317,3 +317,7 @@ console.log(isEven(12343)); // false
 const diameter = 287_460_000_000; // Its a number, but more legible: 287460000000
 
 //  5 ------------------------------- bigInt
+
+// 6 --------------------------------- dates
+
+console.log(12);
