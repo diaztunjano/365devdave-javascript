@@ -319,10 +319,3 @@ const diameter = 287_460_000_000; // Its a number, but more legible: 28746000000
 //  5 ------------------------------- bigInt
 
 // 6 --------------------------------- dates
-
-console.log(12);
-console.log(3));
-console.log(321)
-console.log(32)
-console.log("asd")
-console.log("123")
