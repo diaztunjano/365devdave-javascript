@@ -322,4 +322,3 @@ const diameter = 287_460_000_000; // Its a number, but more legible: 28746000000
 console.log(12);
 console.log(12);
 console.log(12);
-console.log(12);
