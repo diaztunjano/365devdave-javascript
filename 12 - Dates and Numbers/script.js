@@ -321,3 +321,10 @@ const diameter = 287_460_000_000; // Its a number, but more legible: 28746000000
 // 6 --------------------------------- dates
 
 console.log(new Date(account1.movementsDates[0]));
+
+const future = new Date(2037, 10, 19, 15, 23);
+
+console.log(future.getFullYear()); // 2037
+console.log(future.getMonth()); // 10 November because 0 - Jan
+console.log(future.getDate()); // 19 Day of the month
+console.log(future.getDay()); // 4 - thursday / 0 - sunday
