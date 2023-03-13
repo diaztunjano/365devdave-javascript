@@ -258,50 +258,50 @@ btnSort.addEventListener("click", function (e) {
 // 1 - Converting and checking numbers
 
 // Conversions
-console.log(Number("23"));
+// console.log(Number("23"));
 
 // Parsing
 // Tries to read the number and transforms it into Int
-console.log(Number.parseInt("24ew")); // 24
-console.log(Number.parseFloat("2.4ew")); // 2.4
+// console.log(Number.parseInt("24ew")); // 24
+// console.log(Number.parseFloat("2.4ew")); // 2.4
 
 // Check is value is Not a Number (NaN)
-console.log(Number.isNaN(23)); // false
-console.log(Number.isNaN(0 / 0)); // true
+// console.log(Number.isNaN(23)); // false
+// console.log(Number.isNaN(0 / 0)); // true
 
 // Checking is value is a number
-console.log(Number.isFinite(20)); // true
-console.log(Number.isFinite("20")); // false
+// console.log(Number.isFinite(20)); // true
+// console.log(Number.isFinite("20")); // false
 
 // 2 ------------------------- Math and Rounding
 
-console.log(Math.sqrt(25)); // 5
-console.log(Math.max(25, 1, 23)); // 25
+// console.log(Math.sqrt(25)); // 5
+// console.log(Math.max(25, 1, 23)); // 25
 
 // Trunc -> Removes the decimal part
-console.log(Math.trunc(Math.random() * 6) + 1);
+// console.log(Math.trunc(Math.random() * 6) + 1);
 
 // RandomInt between min and max
 const randomInt = (min, max) =>
   Math.floor(Math.random() * (max - min) + 1 + min);
 
-console.log(randomInt(10, 20));
+// console.log(randomInt(10, 20));
 
 // Rounds to the nears int
-console.log(Math.round(23.6)); // 24
-console.log(Math.floor(23.6)); // 23
+// console.log(Math.round(23.6)); // 24
+// console.log(Math.floor(23.6)); // 23
 
 // Rounding decimals
-console.log((2.7).toFixed(0)); // 3 as string
+// console.log((2.7).toFixed(0)); // 3 as string
 
 // 3 ---------------------------- Remainder operator
 
-console.log(5 % 2); // 5 / 2 = (2 * 2) + 1 -> Returns 1.
+// console.log(5 % 2); // 5 / 2 = (2 * 2) + 1 -> Returns 1.
 
 const isEven = (n) => n % 2 === 0;
 
-console.log(isEven(12342)); // true
-console.log(isEven(12343)); // false
+// console.log(isEven(12342)); // true
+// console.log(isEven(12343)); // false
 
 //
 // labelBalance.addEventListener("click", () => {
@@ -319,4 +319,5 @@ const diameter = 287_460_000_000; // Its a number, but more legible: 28746000000
 //  5 ------------------------------- bigInt
 
 // 6 --------------------------------- dates
-console.log(12);
+
+console.log(new Date(account1.movementsDates[0]));
