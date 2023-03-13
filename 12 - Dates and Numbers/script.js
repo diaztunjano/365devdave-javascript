@@ -328,3 +328,6 @@ console.log(future.getFullYear()); // 2037
 console.log(future.getMonth()); // 10 November because 0 - Jan
 console.log(future.getDate()); // 19 Day of the month
 console.log(future.getDay()); // 4 - thursday / 0 - sunday
+console.log(future.getHours()); // 15hrs
+console.log(future.getMinutes()); // 23
+console.log(future.toISOString()); // 2037-11-19T18:23:00.000Z
