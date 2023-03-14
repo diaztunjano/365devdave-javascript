@@ -155,6 +155,19 @@ const updateUI = function (acc) {
 // Event handlers
 let currentAccount;
 
+// FAKE ALWAYS LOGGED IN
+
+currentAccount = account1;
+updateUI(currentAccount);
+containerApp.style.opacity = 100;
+
+// DATES
+
+const now = new Date();
+labelDate.textContent = now;
+
+//
+
 btnLogin.addEventListener("click", function (e) {
   // Prevent form from submitting
   e.preventDefault();
@@ -327,7 +340,9 @@ const future = new Date(2037, 10, 19, 15, 23);
 console.log(future.getFullYear()); // 2037
 console.log(future.getMonth()); // 10 November because 0 - Jan
 console.log(future.getDate()); // 19 Day of the month
-console.log(future.getDay()); // 4 - thursday / 0 - sunday
+console.log(future.getDay()); // 4 - Thursday / 0 - sunday
 console.log(future.getHours()); // 15hrs
 console.log(future.getMinutes()); // 23
 console.log(future.toISOString()); // 2037-11-19T18:23:00.000Z
+
+// 7 ------ Dates to Bankist:
