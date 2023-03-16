@@ -385,3 +385,4 @@ const future = new Date(2037, 10, 19, 15, 23);
 
 // console.log(calcDayPassed(new Date(2022, 3, 14), new Date(2022, 3, 24)));
 // console.log(calcDayPassed(new Date(2022, 3, 14), new Date(2022, 3, 24)));
+// console.log(calcDayPassed(new Date(2022, 3, 14), new Date(2022, 3, 24)));
