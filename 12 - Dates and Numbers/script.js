@@ -372,4 +372,8 @@ console.log(future.getHours()); // 15hrs
 console.log(future.getMinutes()); // 23
 console.log(future.toISOString()); // 2037-11-19T18:23:00.000Z
 
-// 7 ------ Dates to Bankist:
+// 8 ------ Dates to Bankist:
+
+const calcDayPassed = (day1, day2) => (day2 - day1) / (1000 * 60 * 60 * 24);
+
+console.log(calcDayPassed(new Date(2022, 3, 14), new Date(2022, 3, 24)));
