@@ -82,6 +82,13 @@ const inputClosePin = document.querySelector(".form__input--pin");
 // Functions
 
 const createCurrentDate = (date = new Date()) => {
+  const calcDayPassed = (day1, day2) =>
+    Math.round(Math.abs(day2 - day1) / (1000 * 60 * 60 * 24));
+
+  const daysPassed = calcDayPassed(new Date(), date);
+
+  console.log(daysPassed);
+
   const day = `${date.getDate()}`.padStart(2, 0);
   const month = `${date.getMonth() + 1}`.padStart(2, 0);
   const year = date.getFullYear();
@@ -195,7 +202,7 @@ btnLogin.addEventListener("click", function (e) {
   currentAccount = accounts.find(
     (acc) => acc.username === inputLoginUsername.value
   );
-  console.log(currentAccount);
+  // console.log(currentAccount);
 
   if (currentAccount?.pin === +inputLoginPin.value) {
     // Display UI and message
@@ -271,7 +278,7 @@ btnClose.addEventListener("click", function (e) {
     const index = accounts.findIndex(
       (acc) => acc.username === currentAccount.username
     );
-    console.log(index);
+    // console.log(index);
     // .indexOf(23)
 
     // Delete account
@@ -360,20 +367,18 @@ const diameter = 287_460_000_000; // Its a number, but more legible: 28746000000
 
 // 6 --------------------------------- dates
 
-console.log(new Date(account1.movementsDates[0]));
+// console.log(new Date(account1.movementsDates[0]));
 
 const future = new Date(2037, 10, 19, 15, 23);
 
-console.log(future.getFullYear()); // 2037
-console.log(future.getMonth()); // 10 November because 0 - Jan
-console.log(future.getDate()); // 19 Day of the month
-console.log(future.getDay()); // 4 - Thursday / 0 - sunday
-console.log(future.getHours()); // 15hrs
-console.log(future.getMinutes()); // 23
-console.log(future.toISOString()); // 2037-11-19T18:23:00.000Z
+// console.log(future.getFullYear()); // 2037
+// console.log(future.getMonth()); // 10 November because 0 - Jan
+// console.log(future.getDate()); // 19 Day of the month
+// console.log(future.getDay()); // 4 - Thursday / 0 - sunday
+// console.log(future.getHours()); // 15hrs
+// console.log(future.getMinutes()); // 23
+// console.log(future.toISOString()); // 2037-11-19T18:23:00.000Z
 
 // 8 ------ Dates to Bankist:
 
-const calcDayPassed = (day1, day2) => (day2 - day1) / (1000 * 60 * 60 * 24);
-
-console.log(calcDayPassed(new Date(2022, 3, 14), new Date(2022, 3, 24)));
+// console.log(calcDayPassed(new Date(2022, 3, 14), new Date(2022, 3, 24)));
