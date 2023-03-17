@@ -258,14 +258,16 @@ btnLoan.addEventListener("click", function (e) {
     amount > 0 &&
     currentAccount.movements.some((mov) => mov >= amount * 0.1)
   ) {
-    // Add movement
-    currentAccount.movements.push(amount);
+    setTimeout(function (params) {
+      // Add movement
+      currentAccount.movements.push(amount);
 
-    // Creating dates:
-    currentAccount.movementsDates.push(new Date().toISOString());
+      // Creating dates:
+      currentAccount.movementsDates.push(new Date().toISOString());
 
-    // Update UI
-    updateUI(currentAccount);
+      // Update UI
+      updateUI(currentAccount);
+    }, 2000);
   }
   inputLoanAmount.value = "";
 });
@@ -389,11 +391,11 @@ const future = new Date(2037, 10, 19, 15, 23);
 
 // --------- Timeouts:
 
-setTimeout(() => console.log("Hola que tal"), 3000);
-setTimeout(
-  (ing1, ing2) =>
-    console.log(`Hola que tal, tu nombre es ${ing1} y yo soy ${ing2}`),
-  3000,
-  "Pedro",
-  "Dave"
-);
+// setTimeout(() => console.log("Hola que tal"), 3000);
+// setTimeout(
+//   (ing1, ing2) =>
+//     console.log(`Hola que tal, tu nombre es ${ing1} y yo soy ${ing2}`),
+//   3000,
+//   "Pedro",
+//   "Dave"
+// );
