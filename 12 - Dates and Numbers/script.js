@@ -386,3 +386,14 @@ const future = new Date(2037, 10, 19, 15, 23);
 // console.log(calcDayPassed(new Date(2022, 3, 14), new Date(2022, 3, 24)));
 // console.log(calcDayPassed(new Date(2022, 3, 14), new Date(2022, 3, 24)));
 // console.log(calcDayPassed(new Date(2022, 3, 14), new Date(2022, 3, 24)));
+
+// --------- Timeouts:
+
+setTimeout(() => console.log("Hola que tal"), 3000);
+setTimeout(
+  (ing1, ing2) =>
+    console.log(`Hola que tal, tu nombre es ${ing1} y yo soy ${ing2}`),
+  3000,
+  "Pedro",
+  "Dave"
+);
