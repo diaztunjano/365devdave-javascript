@@ -179,21 +179,30 @@ const updateUI = function (acc) {
 const startLogOutTimer = () => {
   // set 5 minutes as timer
 
-  let time = 100;
+  // seconds
+  let time = 10;
 
-  setInterval(() => {
-    labelTimer.textContent = time;
+  const timer = setInterval(() => {
+    const min = String(Math.trunc(time / 60)).padStart(2, 0);
+    const secs = String(time % 60).padStart(2, 0);
+
+    labelTimer.textContent = `${min}:${secs}`;
 
     // Decrease one second
-
     time--;
+    // call the timer every second
+    if (time === 0) {
+      clearInterval(timer);
+
+      labelWelcome.textContent = "Log in to get started";
+
+      containerApp.style.opacity = 0;
+    }
+
+    // In each call, print the remaining time to the UI clock
+
+    // When 0 seconds, kick the user and stop time
   }, 1000);
-
-  // call the timer every second
-
-  // In each call, print the remaining time to the UI clock
-
-  // When 0 seconds, kick the user and stop time
 };
 
 ///////////////////////////////////////
@@ -202,9 +211,9 @@ let currentAccount;
 
 // FAKE ALWAYS LOGGED IN
 
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 100;
+// currentAccount = account1;
+// updateUI(currentAccount);
+// containerApp.style.opacity = 100;
 
 // DATES
 
