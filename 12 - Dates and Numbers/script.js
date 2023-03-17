@@ -180,16 +180,14 @@ const startLogOutTimer = () => {
   // set 5 minutes as timer
 
   // seconds
-  let time = 10;
-
-  const timer = setInterval(() => {
+  let time = 30;
+  const tick = () => {
     const min = String(Math.trunc(time / 60)).padStart(2, 0);
     const secs = String(time % 60).padStart(2, 0);
 
     labelTimer.textContent = `${min}:${secs}`;
 
     // Decrease one second
-    time--;
     // call the timer every second
     if (time === 0) {
       clearInterval(timer);
@@ -198,16 +196,20 @@ const startLogOutTimer = () => {
 
       containerApp.style.opacity = 0;
     }
+    time--;
 
     // In each call, print the remaining time to the UI clock
 
     // When 0 seconds, kick the user and stop time
-  }, 1000);
+  };
+  tick();
+  const timer = setInterval(tick, 1000);
+  return timer;
 };
 
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
+let currentAccount, timer;
 
 // FAKE ALWAYS LOGGED IN
 
@@ -248,7 +250,8 @@ btnLogin.addEventListener("click", function (e) {
     inputLoginUsername.value = inputLoginPin.value = "";
     inputLoginPin.blur();
 
-    startLogOutTimer();
+    if (timer) clearInterval(timer);
+    timer = startLogOutTimer();
 
     // Update UI
     updateUI(currentAccount);
