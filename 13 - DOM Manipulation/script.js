@@ -45,3 +45,7 @@ document.querySelector(".header");
 const allSections = document.querySelectorAll(".section"); // returns a node list
 
 console.log(allSections);
+
+const allButtons = document.getElementsByTagName("button"); // returns a node list
+
+console.log(allButtons);
