@@ -41,7 +41,7 @@ document.addEventListener("keydown", function (e) {
 // console.log(document.head);
 // console.log(document.body);
 
-document.querySelector(".header");
+const header = document.querySelector(".header");
 
 const allSections = document.querySelectorAll(".section"); // returns a node list
 
@@ -63,4 +63,17 @@ const message = document.createElement("div");
 
 // We can modify it: Adding class
 message.classList.add("cookie-message");
-message.textContent = "We use cookies for improved analytics.";
+
+// Adding text content:
+// message.textContent = "";
+
+// Adding Inner HTML
+message.innerHTML =
+  'We use cookies for improved analytics. <button class="btn btn--close-cookie">Got it! </button>';
+
+// Adds as the first child of the header
+// header.prepend(message);
+header.append(message);
+
+// Now, it gets appended as SIBLINGS, not as father-child as with 'append'
+header.before(message);
