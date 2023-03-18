@@ -76,4 +76,11 @@ message.innerHTML =
 header.append(message);
 
 // Now, it gets appended as SIBLINGS, not as father-child as with 'append'
-header.before(message);
+// header.before(message);
+
+// DELETE ELEMENTS:
+
+document.querySelector(".btn--close-cookie").addEventListener("click", () => {
+  // message.remove();
+  message.parentElement.removeChild(message);
+});
