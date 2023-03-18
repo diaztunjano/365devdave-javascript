@@ -53,4 +53,14 @@ const allButtons = document.getElementsByTagName("button"); // returns a node li
 
 const allButtonsBTN = document.getElementsByClassName("btn"); // returns a node list
 
-console.log(allButtonsBTN);
+// console.log(allButtonsBTN);
+
+// CREATING ELEMENTS:
+
+// Creates a DOM Element and stores it on "message" variable
+// It is not inserted on the page yet.
+const message = document.createElement("div");
+
+// We can modify it: Adding class
+message.classList.add("cookie-message");
+message.textContent = "We use cookies for improved analytics.";
