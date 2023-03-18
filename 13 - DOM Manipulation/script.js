@@ -36,16 +36,21 @@ document.addEventListener("keydown", function (e) {
 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
 
-console.log(document.documentElement);
-console.log(document.head);
-console.log(document.body);
+// SELECTING ELEMENTS
+// console.log(document.documentElement);
+// console.log(document.head);
+// console.log(document.body);
 
 document.querySelector(".header");
 
 const allSections = document.querySelectorAll(".section"); // returns a node list
 
-console.log(allSections);
+// console.log(allSections);
 
 const allButtons = document.getElementsByTagName("button"); // returns a node list
 
-console.log(allButtons);
+// console.log(allButtons);
+
+const allButtonsBTN = document.getElementsByClassName("btn"); // returns a node list
+
+console.log(allButtonsBTN);
