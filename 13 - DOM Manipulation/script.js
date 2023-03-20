@@ -84,3 +84,20 @@ document.querySelector(".btn--close-cookie").addEventListener("click", () => {
   // message.remove();
   message.parentElement.removeChild(message);
 });
+
+/////////////////////////////////// 187. Styles
+
+// inline styles:
+message.style.backgroundColor = "#354fd1";
+
+// Get styles from component
+console.log(getComputedStyle(message).color); // rgb(187,187,187)
+console.log(getComputedStyle(message).height); //50px
+
+// Modify properties after getting it
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 40 + "px";
+
+// CSS Variables:
+
+document.documentElement.style.setProperty("--color-primary", "orangered");
