@@ -154,6 +154,12 @@ btnScrollTo.addEventListener("click", (e) => {
 // Mouse enter
 const h1 = document.querySelector("h1");
 
-h1.addEventListener("mouseenter", () => {
+const showAlert = () => {
   alert("add eventlistener: great");
-});
+  // Remove an event handler
+  // h1.removeEventListener("mouseenter", showAlert);
+};
+
+h1.addEventListener("mouseenter", showAlert);
+
+setTimeout(() => h1.removeEventListener("mouseenter", showAlert), 2000);
