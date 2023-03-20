@@ -88,19 +88,19 @@ document.querySelector(".btn--close-cookie").addEventListener("click", () => {
 /////////////////////////////////// 187. Styles
 
 // inline styles:
-message.style.backgroundColor = "#354fd1";
+// message.style.backgroundColor = "#354fd1";
 
 // Get styles from component
-console.log(getComputedStyle(message).color); // rgb(187,187,187)
-console.log(getComputedStyle(message).height); //50px
+// console.log(getComputedStyle(message).color); // rgb(187,187,187)
+// console.log(getComputedStyle(message).height); //50px
 
-// Modify properties after getting it
-message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 40 + "px";
+// // Modify properties after getting it
+// message.style.height =
+//   Number.parseFloat(getComputedStyle(message).height, 10) + 40 + "px";
 
 // CSS Variables:
 
-document.documentElement.style.setProperty("--color-primary", "orangered");
+// document.documentElement.style.setProperty("--color-primary", "orangered");
 
 // Attributes:
 
@@ -113,3 +113,38 @@ console.log(logo.getAttribute("src")); // Source: relative url to logo in pc
 // img/logo.png
 
 console.log(logo.dataset);
+
+/////////////////////////////////// 188. Smooth Scrolling
+
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
+
+btnScrollTo.addEventListener("click", (e) => {
+  e.preventDefault();
+  const s1coods = section1.getBoundingClientRect();
+
+  console.log("Current Scroll (X/Y)", window.pageXOffset, window.pageYOffset);
+  console.log(
+    "Height Width of Vierport",
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+
+  // Scrolling to:
+  // window.scrollTo(
+  //   s1coods.left + window.pageXOffset,
+  //   s1coods.top + window.pageYOffset
+  // );
+
+  // [OLD SCHOOL] : SMOOTH scrolling to:
+  window.scrollTo({
+    left: s1coods.left + window.pageXOffset,
+    top: s1coods.top + window.pageYOffset,
+    behavior: "smooth",
+  });
+
+  // [NEW FORMAT] : SMOOTH scrolling to:
+  section1.scrollIntoView({
+    behavior: "smooth",
+  });
+});
