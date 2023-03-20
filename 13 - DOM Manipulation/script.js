@@ -101,3 +101,10 @@ message.style.height =
 // CSS Variables:
 
 document.documentElement.style.setProperty("--color-primary", "orangered");
+
+// Attributes:
+
+const logo = document.querySelector(".nav__logo");
+console.log(logo.alt); // Alternative text: Bankist Logo
+console.log(logo.src); // Source: absolute url
+console.log(logo.getAttribute("src")); // Source: relative url to logo in pc
