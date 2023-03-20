@@ -123,12 +123,12 @@ btnScrollTo.addEventListener("click", (e) => {
   e.preventDefault();
   const s1coods = section1.getBoundingClientRect();
 
-  console.log("Current Scroll (X/Y)", window.pageXOffset, window.pageYOffset);
-  console.log(
-    "Height Width of Vierport",
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
+  // console.log("Current Scroll (X/Y)", window.pageXOffset, window.pageYOffset);
+  // console.log(
+  //   "Height Width of Vierport",
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
 
   // Scrolling to:
   // window.scrollTo(
@@ -137,14 +137,23 @@ btnScrollTo.addEventListener("click", (e) => {
   // );
 
   // [OLD SCHOOL] : SMOOTH scrolling to:
-  window.scrollTo({
-    left: s1coods.left + window.pageXOffset,
-    top: s1coods.top + window.pageYOffset,
-    behavior: "smooth",
-  });
+  // window.scrollTo({
+  //   left: s1coods.left + window.pageXOffset,
+  //   top: s1coods.top + window.pageYOffset,
+  //   behavior: "smooth",
+  // });
 
   // [NEW FORMAT] : SMOOTH scrolling to:
   section1.scrollIntoView({
     behavior: "smooth",
   });
+});
+
+/////////////////////////////////// 189. Events and events handlers
+
+// Mouse enter
+const h1 = document.querySelector("h1");
+
+h1.addEventListener("mouseenter", () => {
+  alert("add eventlistener: great");
 });
