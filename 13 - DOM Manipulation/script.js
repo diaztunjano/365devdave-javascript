@@ -175,6 +175,9 @@ const randomColor = () =>
 document.querySelector(".nav__link").addEventListener("click", function (e) {
   this.style.backgroundColor = randomColor();
   console.log("link", e.target, e.currentTarget);
+  console.log(e.currentTarget == this); // True
+
+  e.stopPropagation();
 });
 
 document.querySelector(".nav__links").addEventListener("click", function (e) {
