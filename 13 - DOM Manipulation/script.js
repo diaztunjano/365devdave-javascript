@@ -157,9 +157,16 @@ const h1 = document.querySelector("h1");
 const showAlert = () => {
   alert("add eventlistener: great");
   // Remove an event handler
-  // h1.removeEventListener("mouseenter", showAlert);
+  h1.removeEventListener("mouseenter", showAlert);
 };
 
 h1.addEventListener("mouseenter", showAlert);
 
-setTimeout(() => h1.removeEventListener("mouseenter", showAlert), 2000);
+// setTimeout(() => h1.removeEventListener("mouseenter", showAlert), 2000);
+
+/////////////////////////////////// 191. Event propagation
+
+const randomInt = () => Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
