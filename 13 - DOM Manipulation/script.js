@@ -191,5 +191,5 @@ document.querySelector(".nav").addEventListener(
     this.style.backgroundColor = randomColor();
     console.log("nav", e.target, e.currentTarget);
   },
-  true
+  false
 );
