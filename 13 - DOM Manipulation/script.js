@@ -193,3 +193,5 @@ document.querySelector(".nav").addEventListener(
   },
   false
 );
+
+console.log("Hola");
